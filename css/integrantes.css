@@ -1,93 +1,95 @@
 .team-title {
     text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
     padding: 0 1.2rem;
 }
 
 .team-title h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--dark-bg);
     position: relative;
     display: inline-block;
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.8rem;
 }
 
-/* Linha decorativa roxa idêntica ao padrão da Home e do Sobre */
+/* Linha decorativa roxa centralizada */
 .team-title h2::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 3.5rem;
-    height: 0.2rem;
+    width: 4.5rem;
+    height: 0.3rem;
     background-color: var(--primary-purple);
     border-radius: 0.1rem;
 }
 
 .team-title p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-main);
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     opacity: 0.8;
 }
 
 /* --------------------------------------------------------------------------
-   CONTAINER GRID E CARD DOS INTEGRANTES
+   CONTAINER GRID E CARD DOS INTEGRANTES (VISUAL MAIS ESTICADO)
    -------------------------------------------------------------------------- */
 
-/* Grid fluido que organiza os cards sozinhos dependendo do monitor */
 .team-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-    gap: 2rem;
-    max-width: 1100px; /* Travado em px para manter a simetria perfeita */
-    margin: 0 auto 5rem auto;
-    padding: 0 5%;
+    grid-template-columns: repeat(5, 1fr); /* Mantém os 5 alinhados */
+    gap: 1.8rem;
+    max-width: 1600px;
+    margin: 0 auto 7rem auto;
+    padding: 0 3%;
     width: 100%;
 }
 
-/* Cartão individual de cada aluno */
+/* Cartão individual esticado verticalmente */
 .team-card {
     background-color: var(--white);
-    padding: 2.5rem 1.5rem;
-    border-radius: 0.6rem;
-    box-shadow: 0 0.2rem 1.2rem rgba(18, 12, 36, 0.03);
+    padding: 5rem 1.5rem; /* Aumentado o topo/base e estreitado os lados para esticar */
+    min-height: 28rem; /* Força os cards a esticarem para baixo com elegância */
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 2rem rgba(18, 12, 36, 0.05);
     text-align: center;
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; /* Garante que os botões sociais fiquem sempre alinhados na base */
 }
 
 .team-card:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 0.5rem 1.5rem rgba(140, 98, 243, 0.08);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.8rem 2.5rem rgba(140, 98, 243, 0.12);
 }
 
-/* Mascaramento seguro para as fotos de perfil */
+/* Fotos de perfil centralizadas e imponentes */
 .team-card img {
-    width: 7.5rem;
-    height: 7.5rem;
-    border-radius: 50%; /* Transforma a foto em um círculo perfeito */
-    object-fit: cover; /* Recorta as bordas da foto sem achatar o rosto */
-    margin-bottom: 1.2rem;
-    border: 0.2rem solid var(--light-bg);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 0.3rem solid var(--light-bg);
 }
 
+/* Bloco interno para agrupar os textos e manter o respiro */
 .team-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--dark-bg);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     line-height: 1.4;
     font-weight: 700;
 }
 
 .team-card p {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: var(--text-main);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -96,61 +98,62 @@
 .social-links {
     display: flex;
     gap: 0.8rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     width: 100%;
     justify-content: center;
 }
 
 .social-links a {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-purple);
-    padding: 0.4rem 1rem;
-    border: 0.1rem solid var(--primary-purple);
-    border-radius: 0.4rem;
+    padding: 0.6rem 0.8rem;
+    border: 0.12rem solid var(--primary-purple);
+    border-radius: 0.5rem;
     transition: var(--transition-smooth);
     flex: 1;
-    max-width: 6.5rem; /* Impede que os botões fiquem compridos demais */
+    text-align: center;
 }
 
-/* Inversão de cores suave no hover do botão */
 .social-links a:hover {
     color: var(--white);
     background-color: var(--primary-purple);
 }
 
 /* ==========================================================================
-   MEDIA QUERIES UTILIZANDO PIXELS PARA OS BREAKPOINTS
+   MEDIA QUERIES PARA RESPONSIVIDADE EM OUTRAS TELAS
    ========================================================================== */
 
-/* Ajustes para Tablet (Até 768px) */
-@media (max-width: 768px) {
-    .team-title {
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-    }
-
+@media (max-width: 1300px) {
     .team-container {
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
     }
 }
 
-/* Ajustes para Celular (Até 480px) */
+@media (max-width: 850px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-card {
+        padding: 4rem 1.5rem;
+        min-height: 26rem;
+    }
+}
+
 @media (max-width: 480px) {
     .team-title h2 {
-        font-size: 1.6rem;
-    }
-
-    .team-title p {
-        font-size: 0.95rem;
+        font-size: 2rem;
     }
 
     .team-container {
-        grid-template-columns: 1fr; /* Força um card embaixo do outro no celular */
-        padding: 0 1.2rem;
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
     }
-
-    .social-links a {
-        max-width: none; /* Permite que os botões preencham o espaço lateral no toque */
+    
+    .team-card {
+        min-height: auto; /* No celular desativa o min-height para não sobrar espaço vazio */
+        padding: 3.5rem 1.5rem;
     }
 }

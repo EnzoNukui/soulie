@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soulie - Home</title>
+    <link rel="shortcut icon" href="./imagens/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/main.js" defer></script>
+    <title>Soulie - Home</title>
 </head>
 <body>
 
     <header class="header">
         <div class="logo"> <h1>Soulie</h1> </div>
+
+        <button class="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
         <nav class="navbar" role="navigation" aria-label="Menu principal">
             <ul class="nav-list">
@@ -33,15 +41,15 @@
                     para incentivar hábitos sustentáveis cotidianos, transformando metas ecológicas abstratas 
                     em ações práticas que geram impacto positivo e mensurável na sociedade.
                 </p>
-                <a href="./paginas/sobre.html" class="btn-primary">
+                <a href="./paginas/sobre.html" class="btn-hero" aria-label="Explorar a plataforma Soulie e conhecer o projeto">
                     Explorar Plataforma
                 </a>
             </div>
         </section>
 
-        <section class="project-context">
+        <section class="project-context" aria-labelledby="title-purpose">
             <div class="section-title">
-                <h2>O Nosso Propósito</h2>
+                <h2 id="title-purpose">O Nosso Propósito</h2>
             </div>
             <div class="context-container">
                 <p>
@@ -54,9 +62,9 @@
             </div>
         </section>
 
-        <section class="about-preview">
+        <section class="about-preview" aria-labelledby="title-mission">
             <div class="section-title">
-                <h2>Nossa Missão</h2>
+                <h2 id="title-mission">Nossa Missão</h2>
             </div>
 
             <div class="cards-container">
@@ -86,9 +94,9 @@
             </div>
         </section>
 
-        <section class="features-overview">
+        <section class="features-overview" aria-labelledby="title-features">
             <div class="section-title">
-                <h2>Como a Soulie Funciona</h2>
+                <h2 id="title-features">Como a Soulie Funciona</h2>
             </div>
             
             <div class="features-grid">
@@ -117,7 +125,7 @@
         <section class="cta-banner">
             <h2>Seu tempo é precioso. Vem progredir com a gente!</h2>
             <p>Junte-se à Soulie e faça parte da comunidade que está redesenhando o futuro da preservação ambiental.</p>
-            <a href="./paginas/contato.html" class="btn-secondary">Entre em Contato</a>
+            <a href="./paginas/contato.html" class="btn-secondary" aria-label="Ir para a página de formulário de contato">Entre em Contato</a>
         </section>
 
     </main>
