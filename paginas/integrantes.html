@@ -1,80 +1,97 @@
 <!DOCTYPE html>
-<html lang ="pt-br">
+<html lang="pt-br">
 <head>
-    <meta charser="UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>Soulie - Nossa Equipe</title>
 </head>
- <body>
-    <header class = "header">
-        <div>
+<body>
+
+    <header class="header">
+        <div class="logo">
             <h1>Soulie</h1>
         </div>
-        <nav class="navbar">
-          <ul class ="nav-list">
-            <li><a href = "../index.html">Home</a></li>
-            <li><a href="./sobre.html">Nossa equipe</a></li>
-            <li><a href = "./sobre.html">Sobre</a></li>
-            <li><a href = "./contato.html">Contato</a></li>
-            <li><a href="./faq.html">Perguntas Frequentes e esclarecimentos gerais</a></li>
-          </ul>
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <ul class="nav-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./integrantes.html">Nossa equipe</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+                <li><a href="./faq.html">FAQ</a></li>
+            </ul>
         </nav>
     </header>
+
     <main>
-        <section class = "team-title">
+        <section class="team-title">
             <h2>Nossa equipe</h2>
             <p>Conheça os desenvolvedores por trás do desenvolvimento da Soulie</p>
         </section>
-        <article class ="team-card">
-            <img src="../imagens/imagens_integrantes/foto_arthur.png" alt="Foto do integrante Arthur"> <!--por foto , integrante 1 (Arthur)-->
-            <h3>Arthur Carvalho Brito Martins</h3>
-            <p>RM 572325</p>
-            <p>Turma: 1TDSPH</p>
-            <div  class = "social-links"></div>
-            <a href = "https://github.com/arthurmartinss">GitHub</a>
-            <a href = "https://www.linkedin.com/in/arthur-martinss/">LinkedIn</a>
-        </article>
-         <article class ="team-card">
-            <img src="" alt="">  <!--por foto , integrante 2 (Diego)-->
-            <h3>Diego Soares Trujillo</h3>
-            <p>RM 570147 </p>
-            <p>Turma: 1TDSPH</p>
-            <div  class = "social-links"></div>
-            <a href = "https://github.com/diegotrujillo011">GitHub</a>
-            <a href = "https://www.linkedin.com/in/diego-trujillo-3441b9380/">LinkedIn</a>
-        </article>
-         <article class ="team-card">
-            <img src="../imagens/imagens_integrantes/foto_enzo.jpeg" alt="Foto do integrante Enzo">  <!--por foto , integrante 3 (Enzo)-->
-            <h3>Enzo Nukui da Silvia</h3>
-            <p>RM 569770</p>
-            <p>Turma: 1TDSPH</p>
-            <div  class = "social-links"></div>
-            <a href = "https://github.com/EnzoNukui">GitHub</a>
-            <a href = "https://www.linkedin.com/in/enzo-nukui/">LinkedIn</a>
-        </article>
-            <img src="" alt=""> <!--por foto , integrante 4 (Leticia)-->
-            <h3>Leticia Cardoso de Almeida</h3>
-            <p>RM 569415 </p>
-            <p>Turma: 1TDSPH</p>
-            <div  class = "social-links"></div>
-            <a href = "https://github.com/lehalmeidafc0">GitHub</a>
-            <a href = "https://www.linkedin.com/in/let%C3%ADcia-almeida-70b851294/">LinkedIn</a>
-        </article>
-         <article class ="team-card">
-            <img src="" alt=""> <!--por foto , integrante 5 (Le Felix)-->
-            <h3>Leticia Dias Araujo Felix Moratori </h3>
-            <p>RM 569138</p>
-            <p>Turma: 1TDSPH</p>
-            <div  class = "social-links"></div>
-            <a href = "https://github.com/LeticiaFelix18">GitHub</a>
-            <a href = "" >LinkedIn</a>
-        </article>
+
+        <div class="team-container">
+
+            <article class="team-card">
+                <img src="../imagens/imagens_integrantes/foto_arthur.png" alt="Foto do integrante Arthur Carvalho">
+                <h3>Arthur Carvalho Brito Martins</h3>
+                <p>RM 572325</p>
+                <p>Turma: 1TDSPH</p>
+                <div class="social-links">
+                    <a href="https://github.com/arthurmartinss">GitHub</a>
+                    <a href="https://www.linkedin.com/in/arthur-martinss/">LinkedIn</a>
+                </div>
+            </article>
+
+            <article class="team-card">
+                <img src="../imagens/imagens_integrantes/foto_diego.png" alt="Foto do integrante Diego Soares">
+                <h3>Diego Soares Trujillo</h3>
+                <p>RM 570147</p>
+                <p>Turma: 1TDSPH</p>
+                <div class="social-links">
+                    <a href="https://github.com/diegotrujillo011">GitHub</a>
+                    <a href="https://www.linkedin.com/in/diego-trujillo-3441b9380/">LinkedIn</a>
+                </div>
+            </article>
+
+            <article class="team-card">
+                <img src="../imagens/imagens_integrantes/foto_enzo.jpeg" alt="Foto do integrante Enzo Nukui">
+                <h3>Enzo Nukui da Silvia</h3>
+                <p>RM 569770</p>
+                <p>Turma: 1TDSPH</p>
+                <div class="social-links">
+                    <a href="https://github.com/EnzoNukui">GitHub</a>
+                    <a href="https://www.linkedin.com/in/enzo-nukui/">LinkedIn</a>
+                </div>
+            </article>
+
+            <article class="team-card">
+                <img src="../imagens/imagens_integrantes/foto_leticia_cardoso.png" alt="Foto da integrante Leticia Cardoso">
+                <h3>Leticia Cardoso de Almeida</h3>
+                <p>RM 569415</p>
+                <p>Turma: 1TDSPH</p>
+                <div class="social-links">
+                    <a href="https://github.com/lehalmeidafc0">GitHub</a>
+                    <a href="https://www.linkedin.com/in/let%C3%ADcia-almeida-70b851294/">LinkedIn</a>
+                </div>
+            </article>
+
+            <article class="team-card">
+                <img src="../imagens/imagens_integrantes/foto_leticia_dias.png" alt="Foto da integrante Leticia Dias">
+                <h3>Leticia Dias Araujo Felix Moratori</h3>
+                <p>RM 569138</p>
+                <p>Turma: 1TDSPH</p>
+                <div class="social-links">
+                    <a href="https://github.com/LeticiaFelix18">GitHub</a>
+                    <a href="https://www.linkedin.com/in/leticia-felix-ajustar">LinkedIn</a>
+                </div>
+            </article>
+
+        </div>
     </main>
-    <footer class ="footer">
+
+    <footer class="footer">
         <p>© 2026 Soulie - Todos os direitos reservados.</p>
     </footer>
 
- </body>
+</body>
 </html>

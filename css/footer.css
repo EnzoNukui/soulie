@@ -1,0 +1,10 @@
+.footer {
+    width: 100%;
+    background-color: var(--white); 
+    color: var(--text-main); /* Usa o cinza escuro das variáveis */
+    text-align: center;
+    padding: 1.5rem 1rem; /* Espaçamento crucial que faltava no print */
+    font-size: 0.875rem; 
+    font-weight: 500;
+    border-top: 0.0625rem solid rgba(140, 98, 243, 0.15); /* Linha roxa bem sutil para separar do banner */
+}
