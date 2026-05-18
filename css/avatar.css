@@ -1,0 +1,28 @@
+/* Posicionamento do Boneco Travado na Tela (Ajustado) */
+.avatar-hero {
+    position: fixed;        /* Mantém fixo na tela durante a rolagem */
+    right: 20px;            /* Afastamento da borda direita */
+    
+    /* Posição Vertical: Mudamos de 50% para 35% para subir o mascote */
+    top: 30%;               
+    transform: translateY(-50%); 
+    
+    /* Tamanho: Reduzido de 110px para 85px para ficar menor e mais delicado */
+    width: 75px;            
+    height: auto;           /* Mantém a proporção perfeita da imagem */
+    
+    z-index: 999;           /* Fica por cima de todos os elementos no scroll */
+    pointer-events: none;   /* Permite clicar no que estiver atrás dele */
+}
+/* Versão Responsiva: Celulares (Telas de até 768px de largura) */
+@media (max-width: 768px) {
+    .avatar-hero {
+        top: auto;             
+        transform: none;       
+        
+        /* Aplicando rem apenas onde é necessário para o redimensionamento dinâmico */
+        bottom: 1.25rem;       /* Proporcional a ~20px (distância da base) */
+        right: 1rem;           /* Proporcional a ~16px (afastamento da lateral) */
+        width: 3.5rem;         /* Proporcional a ~56px (tamanho compacto e escalável) */
+    }
+}
