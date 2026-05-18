@@ -71,7 +71,7 @@ Conheça os desenvolvedores responsáveis pela idealização e execução do eco
 
 ## 🔗 Repositório
 
-> ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white) [https://github.com/EnzoNukui/soulie](https://github.com/EnzoNukui/soulie)
+[![GitHub](https://img.icons8.com/ios-glyphs/30/github.png)](https://github.com/EnzoNukui/soulie) [https://github.com/EnzoNukui/soulie](https://github.com/EnzoNukui/soulie)
 
 ## 📁 Estrutura de Pastas do Projeto
 A arquitetura do repositório segue rigorosamente a organização de arquivos do ambiente de desenvolvimento:
