@@ -323,15 +323,6 @@
         padding-right: 1.2rem;
     }
 
-    /* [REQUISITO REM]: Avatar realocado de forma responsiva para a base DIREITA */
-    .avatar-hero {
-        top: auto;             
-        transform: none;       
-        bottom: 1.25rem;       
-        right: 1rem;           
-        width: 3.5rem;         
-    }
-
     /* [REQUISITO REM]: Ajustes da Vitrine de Expressões no celular */
     .expressions-grid {
         grid-template-columns: repeat(2, 1fr); 
