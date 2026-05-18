@@ -1,16 +1,19 @@
 /* ==========================================================================
-   ESTILOS DA PÁGINA SOBRE O PROJETO - TÍTULOS CENTRALIZADOS
+   AGRUPAMENTO E ESTILOS GERAIS DA PÁGINA SOBRE
    ========================================================================== */
 
 /* Configuração comum para espaçamento de seções */
 .about-hero, 
 .about-problem, 
-.about-solution {
+.about-solution,
+.avatar-timeline-section,
+.avatar-expressions-section {
     padding: 3.5rem 5%;
     width: 100%;
+    box-sizing: border-box;
 }
 
-/* Centralização e estilização dos títulos das seções */
+/* Base de títulos centralizados (Padrão para todas as seções) */
 .section-title {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -38,10 +41,11 @@
     border-radius: 0.1rem;
 }
 
-/* Alinhamento dos blocos de texto com largura limite em Pixels */
-.about-hero-content,
+/* Alinhamento base dos parágrafos de conteúdo institucional */
+.about-hero-content p,
 .problem-container > p,
-.solution-container > p {
+.solution-container > p,
+.expressions-container > p {
     max-width: 900px;
     margin: 0 auto 1.5rem auto;
     font-size: 1.1rem;
@@ -50,17 +54,126 @@
     text-align: justify;
 }
 
-/* --------------------------------------------------------------------------
-   1. SEÇÃO INTRODUTÓRIA (ABOUT HERO)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   1. SEÇÃO INTRODUTÓRIA (ABOUT HERO) & AVATAR FIXO
+   ========================================================================== */
+
 .about-hero {
+    position: relative;
     background: linear-gradient(135deg, var(--white) 0%, var(--light-bg) 100%);
     padding-top: 5rem;
+    
+    /* Configuração Flex vertical para centralizar o título do topo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-/* --------------------------------------------------------------------------
-   2. SEÇÃO DO PROBLEMA (DESAFIO DO MERCADO)
-   -------------------------------------------------------------------------- */
+/* Avatar flutuante persistente travado na lateral DIREITA da janela */
+.avatar-hero {
+    position: fixed;        
+    right: 40px;            
+    top: 35%;               
+    transform: translateY(-50%); 
+    width: 85px;            
+    height: auto;           
+    z-index: 999;           
+    pointer-events: none;   
+    transition: all 0.3s ease; 
+}
+
+/* ==========================================================================
+   2. TRAJETÓRIA DA IDEIA (IMAGENS PADRONIZADAS E CENTRALIZADAS)
+   ========================================================================== */
+
+.avatar-timeline-section {
+    background-color: var(--light-bg);
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-intro {
+    text-align: center !important;
+    margin-bottom: 4.5rem !important;
+}
+
+.timeline-roadmap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Linha conectora horizontal para os círculos maiores */
+.timeline-roadmap::before {
+    content: '';
+    position: absolute;
+    top: 65px; 
+    left: 5%;
+    width: 90%;
+    height: 5px;
+    background: linear-gradient(90deg, #5cdbb5, var(--primary-purple));
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.timeline-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Círculos do Roadmap */
+.avatar-box {
+    background-color: var(--white);
+    border: 4px solid var(--primary-purple);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    
+    /* Flexbox garante a centralização perfeita da imagem dentro do círculo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 16px rgba(18, 12, 36, 0.06);
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.avatar-box:hover {
+    transform: scale(1.06);
+}
+
+/* CORREÇÃO AQUI: Imagens com tamanho idêntico e sem deformação */
+.avatar-box img {
+    width: 85px;            /* Força a mesma largura para todas */
+    height: 85px;           /* Força a mesma altura para todas */
+    object-fit: contain;    /* Centraliza e impede o boneco de achatar ou esticar */
+}
+
+.timeline-step h3 {
+    font-size: 1.25rem;
+    color: var(--dark-bg);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* ==========================================================================
+   3. SEÇÃO DO PROBLEMA (DESAFIO DO MERCADO)
+   ========================================================================== */
+
 .about-problem {
     background-color: var(--white);
 }
@@ -70,7 +183,6 @@
     margin: 0 auto;
 }
 
-/* Lista de sub-problemas em formato Grid */
 .problem-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
@@ -100,9 +212,10 @@
     text-align: justify;
 }
 
-/* --------------------------------------------------------------------------
-   3. SEÇÃO DA SOLUÇÃO (PILARES E BENCHMARK)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   4. SEÇÃO DA SOLUÇÃO (PILARES E BENCHMARK)
+   ========================================================================== */
+
 .about-solution {
     background-color: var(--light-bg);
     padding-bottom: 5rem;
@@ -113,7 +226,6 @@
     margin: 0 auto;
 }
 
-/* Malha auto-responsiva para exibição dos 4 pilares */
 .solution-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
@@ -150,27 +262,147 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES UTILIZANDO PIXELS PARA OS BREAKPOINTS
+   5. SEÇÃO VITRINE DE EXPRESSÕES (GRID DE MASCOTES)
    ========================================================================== */
 
-/* Ajustes para Tablet (Até 768px) */
+.avatar-expressions-section {
+    background-color: var(--white);
+}
+
+.expressions-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.expressions-container > p {
+    text-align: center !important;
+    margin-bottom: 56px;
+}
+
+.expressions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    justify-content: center;
+}
+
+.expression-card {
+    background: var(--light-bg);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    transition: var(--transition-smooth);
+}
+
+.expression-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-purple); 
+    box-shadow: 0 12px 24px rgba(139, 92, 246, 0.08);
+}
+
+.expression-card img {
+    width: 90px;           
+    height: auto;          
+}
+
+.expression-card span {
+    font-size: 1rem;
+    color: var(--dark-bg);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   6. REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Ajustes para Tablet e Telas Médias (Até 768px) */
 @media (max-width: 768px) {
     .about-hero {
         padding-top: 4rem;
+        gap: 2rem;
     }
     
     .about-hero, 
     .about-problem, 
-    .about-solution {
+    .about-solution,
+    .avatar-timeline-section,
+    .avatar-expressions-section {
         padding-left: 1.2rem;
         padding-right: 1.2rem;
     }
+
+    /* [REQUISITO REM]: Avatar realocado de forma responsiva para a base DIREITA */
+    .avatar-hero {
+        top: auto;             
+        transform: none;       
+        bottom: 1.25rem;       
+        right: 1rem;           
+        width: 3.5rem;         
+    }
+
+    /* [REQUISITO REM]: Ajustes da Vitrine de Expressões no celular */
+    .expressions-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem;
+    }
+
+    .expression-card {
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+    }
+
+    .expression-card img {
+        width: 4.5rem; 
+    }
+
+    /* [REQUISITO REM]: Trajetória convertida para Linha Vertical no Mobile */
+    .timeline-roadmap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+        padding-left: 1rem;
+    }
+
+    .timeline-roadmap::before {
+        top: 0;
+        left: 3.3rem; 
+        width: 5px;
+        height: 100%;
+    }
+
+    .timeline-step {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .avatar-box {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+
+    /* Redimensionamento controlado no mobile mantendo o quadrado do object-fit */
+    .avatar-box img {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .timeline-step h3 {
+        text-align: left;
+    }
 }
 
-/* Ajustes para Mobile (Até 480px) */
+/* Ajustes para Mobile Pequeno (Até 480px) */
 @media (max-width: 480px) {
-    /* Altera o alinhamento para a esquerda evitando espacamentos grandes no mobile */
-    .about-hero-content,
+    .about-hero-content p,
     .problem-container > p,
     .solution-container > p,
     .problem-card p,
@@ -187,5 +419,9 @@
     .problem-card,
     .solution-item {
         padding: 1.5rem 1.2rem;
+    }
+
+    .timeline-container > p {
+        text-align: left !important;
     }
 }
