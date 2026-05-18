@@ -70,19 +70,6 @@
     text-align: center;
 }
 
-/* Avatar flutuante persistente travado na lateral DIREITA da janela */
-.avatar-hero {
-    position: fixed;        
-    right: 40px;            
-    top: 35%;               
-    transform: translateY(-50%); 
-    width: 85px;            
-    height: auto;           
-    z-index: 999;           
-    pointer-events: none;   
-    transition: all 0.3s ease; 
-}
-
 /* ==========================================================================
    2. TRAJETÓRIA DA IDEIA (IMAGENS PADRONIZADAS E CENTRALIZADAS)
    ========================================================================== */
