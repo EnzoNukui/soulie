@@ -294,7 +294,8 @@
 
 .expression-card img {
     width: 90px;           
-    height: auto;          
+    height: 90px; 
+    object-fit: contain;         
 }
 
 .expression-card span {
