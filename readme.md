@@ -39,13 +39,12 @@ Para ilustrar a jornada do usuário, a consistência da identidade visual e a en
 ### 📱 4. Experiência Responsiva e Mobile (Home - Mobile)
 *A versão para celular da página inicial demonstra a adaptabilidade completa do layout às telas menores. O cabeçalho fixa-se dinamicamente com a substituição do menu tradicional por um componente de Menu Hambúrguer interativo. A tipografia reorganiza-se de forma fluida e os botões de ação reajustam-se para ocupar a largura ideal da tela, mantendo a usabilidade e o conforto visual.*
 
-<img src="./imagens/apres_proj/home_mobile.png" alt="Página Principal - Mobile" width="100%">
+<img src="./imagens/apres_proj/home_mobile.png" alt="Página Principal - Mobile" height="420" style="display: block; margin: 0 auto;">
 
 ### 📱 5. Engenharia de Responsividade (Sobre - Mobile)
 *Demonstração da adaptação da trajetória institucional para dispositivos móveis. Através de media queries estratégicas, o roadmap transita de um fluxo horizontal para uma linha do tempo vertical centralizada. A engenharia do componente utiliza um pseudoelemento (`::before`) com gradiente linear de 180° para garantir a continuidade visual e a fluidez da leitura em telas estreitas, mantendo a hierarquia das etapas de evolução.*
 
-<img src="./imagens/apres_proj/sobre_mobile.png" alt="Página Sobre - Mobile" style="max-width: 180px; max-height: 300px; display: block; margin: 0 auto;">
-
+<img src="./imagens/apres_proj/sobre_mobile.png" alt="Página Sobre - Mobile" height="420" style="display: block; margin: 0 auto;">
 ---
 
 
