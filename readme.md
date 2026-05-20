@@ -44,7 +44,7 @@ Para ilustrar a jornada do usuário, a consistência da identidade visual e a en
 ### 📱 5. Engenharia de Responsividade (Sobre - Mobile)
 *Demonstração da adaptação da trajetória institucional para dispositivos móveis. Através de media queries estratégicas, o roadmap transita de um fluxo horizontal para uma linha do tempo vertical centralizada. A engenharia do componente utiliza um pseudoelemento (`::before`) com gradiente linear de 180° para garantir a continuidade visual e a fluidez da leitura em telas estreitas, mantendo a hierarquia das etapas de evolução.*
 
-<img src="./imagens/apres_proj/sobre_mobile.png" alt="Página Sobre - Mobile" width="100%">
+<img src="./imagens/apres_proj/sobre_mobile.png" alt="Página Sobre - Mobile" width="100%" height="90px">
 
 ---
 
