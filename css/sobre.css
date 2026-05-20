@@ -215,7 +215,7 @@
 
 .solution-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
     margin-top: 2.5rem;
     width: 100%;
@@ -298,7 +298,8 @@
 
 .expression-card img {
     width: 90px;           
-    height: auto;          
+    height: 90px; 
+    object-fit: contain;         
 }
 
 .expression-card span {
@@ -325,6 +326,13 @@
     .avatar-expressions-section {
         padding-left: 1.2rem;
         padding-right: 1.2rem;
+    }
+
+    .problem-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 540px;        
+        margin: 2.5rem auto 0 auto; 
     }
 
     /* [REQUISITO REM]: Ajustes da Vitrine de Expressões no celular */
