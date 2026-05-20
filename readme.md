@@ -105,3 +105,14 @@ A arquitetura do repositório segue rigorosamente a organização de arquivos do
 │   └── sobre.html            # Detalhemento e trajetória da solução
 ├── index.html                # Página principal (Home) do ecossistema
 └── readme.md                 # Guia técnico e informativo do projeto
+```
+---
+
+## ✉️ Contato e Suporte
+
+Para garantir a transparência, o reporte de melhorias e o esclarecimento de dúvidas sobre o ecossistema **Soulie**, a equipe disponibiliza os seguintes canais oficiais de comunicação:
+
+* 🐛 **Reporte de Bugs e Sugestões (Via GitHub):** Caso encontre alguma falha de responsividade, renderização ou queira sugerir melhorias técnicas, abra uma sinalização diretamente na nossa aba de [GitHub Issues](https://github.com/EnzoNukui/soulie/issues). É a forma mais rápida de interagir com o time de desenvolvimento.
+* ✉️ **Contato Direto com a Equipe:** Para qualquer dúvida geral, feedback sobre a solução ou outras informações sobre o projeto, você pode falar diretamente com um de nossos desenvolvedores responsáveis através do e-mail: [rm572325@fiap.com.br](mailto:rm572325@fiap.com.br).
+
+
