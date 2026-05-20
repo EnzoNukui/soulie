@@ -16,6 +16,41 @@ O projeto foi desenvolvido utilizando tecnologias web nativas, prezando pela per
 
 ---
 
+
+## 📸 Imagens e Representação do Projeto
+
+Para ilustrar a jornada do usuário, a consistência da identidade visual e a engenharia de design responsivo do ecossistema **Soulie**, apresentamos abaixo as capturas de tela reais de todas as interfaces desenvolvidas na plataforma, cobrindo as experiências Desktop e Mobile:
+
+### 🏠 1. Página Principal (Home - Desktop)
+*A interface principal apresenta um design clean e moderno, estruturado com uma tipografia marcante em tons de roxo (`var(--primary-purple)`). A dobra traz uma chamada para ação (CTA) direta através do botão "Explorar Plataforma", além de introduzir a seção "O Nosso Propósito", que contextualiza o foco do ecossistema na retenção de usuários.*
+
+<img src="./imagens/apres_proj/home_desktop.png" alt="Página Principal - Desktop" width="100%">
+
+### 📈 2. Página Institucional e Linha do Tempo (Sobre - Desktop)
+*A página "Sobre" detalha a origem conceitual da assistente virtual baseada no filme Soul. Logo abaixo, a seção "Trajetória da Ideia" apresenta uma linha do tempo horizontal modular construída inteiramente em CSS, utilizando flexbox e máscaras circulares para exibir as cinco fases evolutivas do avatar com as suas respectivas expressões visuais e uma linha conectora com gradiente de cor suave.*
+
+<img src="./imagens/apres_proj/sobre_desktop.png" alt="Página Sobre e Trajetória - Desktop" width="100%">
+
+### 🧩 3. Central de Perguntas Frequentes (FAQ - Desktop)
+*A página de FAQ organiza os principais esclarecimentos de negócio e operacionais de forma limpa através de componentes colapsáveis (Accordions). Estruturados de forma interativa via JavaScript, os blocos possuem uma borda lateral esquerda destacada com a cor da marca (`var(--primary-purple)`) e ícones de expansão, exibindo o conteúdo sob demanda para otimizar a carga cognitiva e a leitura do usuário.*
+
+<img src="./imagens/apres_proj/faq_desktop.png" alt="Página de FAQ - Desktop" width="100%">
+
+### 📱 4. Experiência Responsiva e Mobile (Home - Mobile)
+*A versão para celular da página inicial demonstra a adaptabilidade completa do layout às telas menores. O cabeçalho fixa-se dinamicamente com a substituição do menu tradicional por um componente de Menu Hambúrguer interativo. A tipografia reorganiza-se de forma fluida e os botões de ação reajustam-se para ocupar a largura ideal da tela, mantendo a usabilidade e o conforto visual.*
+
+| 📱 Interface Mobile - Home |
+| :---: |
+| <img src="./imagens/apres_proj/home_mobile.png" alt="Página Principal - Mobile" height="420"> |
+
+### 📱 5. Engenharia de Responsividade (Sobre - Mobile)
+*Demonstração da adaptação da trajetória institucional para dispositivos móveis. Através de media queries estratégicas, o roadmap transita de um fluxo horizontal para uma linha do tempo vertical centralizada. A engenharia do componente utiliza um pseudoelemento (`::before`) com gradiente linear de 180° para garantir a continuidade visual e a fluidez da leitura em telas estreitas, mantendo a hierarquia das etapas de evolução.*
+
+| 📱 Interface Mobile - Sobre |
+| :---: |
+| <img src="./imagens/apres_proj/sobre_mobile.png" alt="Página Sobre - Mobile" height="420"> |
+
+
 ## 👥 Autores e Créditos
 
 Conheça os desenvolvedores responsáveis pela idealização e execução do ecossistema Soulie:
@@ -93,6 +128,7 @@ A arquitetura do repositório segue rigorosamente a organização de arquivos do
 │   ├── 📂 avatar/            # Estados, expressões e evolução da Soulie
 │   ├── 📂 favicon/           # Ícones de inicialização do navegador
 │   └── 📂 imagens_integrantes/ # Fotos e recursos visuais da equipe
+│   └── 📂 apres_proj/          # Fotos apresentação projeto
 ├── 📂 js/
 │   ├── contato.js            # Validações do formulário de contato
 │   ├── faq.js                # Comportamento dos accordions de dúvidas
