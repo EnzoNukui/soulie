@@ -247,9 +247,8 @@
     line-height: 1.6;
     text-align: justify;
 }
-
 /* ==========================================================================
-   5. SEÇÃO VITRINE DE EXPRESSÕES (GRID DE MASCOTES)
+   5. SEÇÃO VITRINE DE EXPRESSÕES (ALINHAMENTO CENTRALIZADO PREMIUM)
    ========================================================================== */
 
 .avatar-expressions-section {
@@ -266,11 +265,12 @@
     margin-bottom: 56px;
 }
 
+/* ALTERADO: Mudamos para Flexbox para dar o superpoder de centralizar a última linha */
 .expressions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 24px;
-    justify-content: center;
+    justify-content: center; /* Esse comando centraliza os 3 cards que sobram embaixo! */
 }
 
 .expression-card {
@@ -284,6 +284,10 @@
     justify-content: center;
     gap: 16px;
     transition: var(--transition-smooth);
+    
+    /* ADICIONADO: Mantém o tamanho exato de 180px que você tinha configurado antes */
+    width: 180px;
+    box-sizing: border-box;
 }
 
 .expression-card:hover {
@@ -325,11 +329,13 @@
 
     /* [REQUISITO REM]: Ajustes da Vitrine de Expressões no celular */
     .expressions-grid {
+        display: grid; /* Força a voltar a ser Grid no celular */
         grid-template-columns: repeat(2, 1fr); 
         gap: 1rem;
     }
 
     .expression-card {
+        width: auto; /* Remove os 180px fixos para se adaptar à tela do celular */
         padding: 1.25rem;
         border-radius: 0.75rem;
     }
