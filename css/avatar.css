@@ -1,4 +1,4 @@
-/* Posicionamento do Boneco Travado na Tela (Ajustado) */
+/* Posicionamento do Boneco Travado na Tela */
 .avatar-hero {
     position: fixed;       
     right: 20px;              
@@ -9,13 +9,29 @@
     z-index: 999;           
     pointer-events: none; 
 }
-/* Versão Responsiva: Celulares (Telas de até 768px de largura) */
+
+@media (max-width: 1300px) {
+    .avatar-hero {
+        right: 15px;
+        width: 70px; 
+    }
+}
+
 @media (max-width: 768px) {
     .avatar-hero {
         top: auto;             
         transform: none;       
+        bottom: 1.5rem; 
+        right: 1.5rem;           
+        width: 4rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .avatar-hero {
         bottom: 1.25rem;       
-        right: 1rem;           
-        width: 3.5rem;         
+        right: 1.25rem;           
+        width: 3.2rem; 
+        opacity: 0.95; 
     }
 }

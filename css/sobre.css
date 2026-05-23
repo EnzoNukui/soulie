@@ -1,8 +1,7 @@
 /* ==========================================================================
-   AGRUPAMENTO E ESTILOS GERAIS DA PÁGINA SOBRE
+   ESTILOS GERAIS DA PÁGINA SOBRE
    ========================================================================== */
 
-/* Configuração comum para espaçamento de seções */
 .about-hero, 
 .about-problem, 
 .about-solution,
@@ -12,7 +11,6 @@
     width: 100%;
 }
 
-/* Base de títulos centralizados (Padrão para todas as seções) */
 .section-title {
     text-align: center;
     margin-bottom: 2.5rem;
@@ -27,7 +25,6 @@
     padding-bottom: 0.6rem;
 }
 
-/* Linha decorativa roxa centralizada abaixo do título */
 .section-title h2::after {
     content: '';
     position: absolute;
@@ -40,7 +37,6 @@
     border-radius: 0.1rem;
 }
 
-/* Alinhamento base dos parágrafos de conteúdo institucional */
 .about-hero-content p,
 .problem-container > p,
 .solution-container > p,
@@ -54,7 +50,7 @@
 }
 
 /* ==========================================================================
-   1. SEÇÃO INTRODUTÓRIA (ABOUT HERO) & AVATAR FIXO
+   1. SEÇÃO INTRODUTÓRIA
    ========================================================================== */
 
 .about-hero {
@@ -70,7 +66,7 @@
 }
 
 /* ==========================================================================
-   2. TRAJETÓRIA DA IDEIA (IMAGENS PADRONIZADAS E CENTRALIZADAS)
+   2. TRAJETÓRIA DA IDEIA 
    ========================================================================== */
 
 .avatar-timeline-section {
@@ -96,7 +92,6 @@
     width: 100%;
 }
 
-/* Linha conectora horizontal para os círculos maiores */
 .timeline-roadmap::before {
     content: '';
     position: absolute;
@@ -118,7 +113,6 @@
     z-index: 2;
 }
 
-/* Círculos do Roadmap */
 .avatar-box {
     background-color: var(--white);
     border: 4px solid var(--primary-purple);
@@ -126,7 +120,6 @@
     height: 130px;
     border-radius: 50%;
     
-    /* Flexbox garante a centralização perfeita da imagem dentro do círculo */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,11 +134,10 @@
     transform: scale(1.06);
 }
 
-/* CORREÇÃO AQUI: Imagens com tamanho idêntico e sem deformação */
 .avatar-box img {
-    width: 85px;            /* Força a mesma largura para todas */
-    height: 85px;           /* Força a mesma altura para todas */
-    object-fit: contain;    /* Centraliza e impede o boneco de achatar ou esticar */
+    width: 85px;            
+    height: 85px;           
+    object-fit: contain;    
 }
 
 .timeline-step h3 {
@@ -247,7 +239,7 @@
     text-align: justify;
 }
 /* ==========================================================================
-   5. SEÇÃO VITRINE DE EXPRESSÕES (ALINHAMENTO CENTRALIZADO PREMIUM)
+   5. SEÇÃO VITRINE DE EXPRESSÕES 
    ========================================================================== */
 
 .avatar-expressions-section {
@@ -264,12 +256,11 @@
     margin-bottom: 56px;
 }
 
-/* ALTERADO: Mudamos para Flexbox para dar o superpoder de centralizar a última linha */
 .expressions-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    justify-content: center; /* Esse comando centraliza os 3 cards que sobram embaixo! */
+    justify-content: center; 
 }
 
 .expression-card {
@@ -283,8 +274,6 @@
     justify-content: center;
     gap: 16px;
     transition: var(--transition-smooth);
-    
-    /* ADICIONADO: Mantém o tamanho exato de 180px que você tinha configurado antes */
     width: 180px;
     box-sizing: border-box;
 }
@@ -308,10 +297,37 @@
 }
 
 /* ==========================================================================
-   6. REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+   MEDIA QUERIES
    ========================================================================== */
+@media (max-width: 1300px) {
+    .about-hero, 
+    .about-problem, 
+    .about-solution, 
+    .avatar-timeline-section, 
+    .avatar-expressions-section {
+        padding: 3rem 4%; /* Reduz sutilmente o respiro para o conteúdo não espremer */
+    }
 
-/* Ajustes para Tablet e Telas Médias (Até 768px) */
+    /* PROTEÇÃO DA TIMELINE: Encolhe os círculos para não colidirem antes do mobile */
+    .avatar-box {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .avatar-box img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .timeline-roadmap::before {
+        top: 55px; /* Rebaixa a linha guia para acompanhar o centro dos círculos menores */
+    }
+    
+    .timeline-step h3 {
+        font-size: 1.15rem;
+    }
+}
+
 @media (max-width: 768px) {
     .about-hero {
         padding-top: 4rem;
@@ -334,15 +350,14 @@
         margin: 2.5rem auto 0 auto; 
     }
 
-    /* [REQUISITO REM]: Ajustes da Vitrine de Expressões no celular */
     .expressions-grid {
-        display: grid; /* Força a voltar a ser Grid no celular */
+        display: grid;
         grid-template-columns: repeat(2, 1fr); 
         gap: 1rem;
     }
 
     .expression-card {
-        width: auto; /* Remove os 180px fixos para se adaptar à tela do celular */
+        width: auto; 
         padding: 1.25rem;
         border-radius: 0.75rem;
     }
@@ -351,7 +366,6 @@
         width: 4.5rem; 
     }
 
-    /* [REQUISITO REM]: Trajetória convertida para Linha Vertical no Mobile */
     .timeline-roadmap {
         flex-direction: column;
         align-items: flex-start;
@@ -379,11 +393,10 @@
     .avatar-box {
         margin-bottom: 0;
         flex-shrink: 0;
-        width: 6.5rem;            /* 6.5rem de largura total do círculo */
+        width: 6.5rem;           
         height: 6.5rem;
     }
 
-    /* Redimensionamento controlado no mobile mantendo o quadrado do object-fit */
     .avatar-box img {
         width: 4.5rem;
         height: 4.5rem;
@@ -395,6 +408,7 @@
 }
 
 /* Ajustes para Mobile Pequeno (Até 480px) */
+
 @media (max-width: 480px) {
     .about-hero-content p,
     .problem-container > p,

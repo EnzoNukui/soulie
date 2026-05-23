@@ -8,7 +8,6 @@
     width: 100%;
 }
 
-/* Centralização do título principal */
 .section-title {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -23,7 +22,7 @@
     padding-bottom: 0.6rem;
 }
 
-/* Linha decorativa roxa centralizada (identidade visual unificada) */
+
 .section-title h2::after {
     content: '';
     position: absolute;
@@ -36,7 +35,6 @@
     border-radius: 0.1rem;
 }
 
-/* Subtítulo centralizado logo abaixo do título da página */
 .contact-subtitle {
     max-width: 700px;
     margin: 0 auto;
@@ -48,10 +46,10 @@
 }
 
 /* --------------------------------------------------------------------------
-   ESTILIZAÇÃO DO CORPO DO FORMULÁRIO (CONTACT FORM)
+   ESTILIZAÇÃO DO CORPO DO FORMULÁRIO 
    -------------------------------------------------------------------------- */
 
-/* Caixa do formulário limitada para não esticar excessivamente no desktop */
+
 .contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -59,10 +57,10 @@
     padding: 2.5rem 2rem;
     border-radius: 0.6rem;
     box-shadow: 0 0.2rem 1.2rem rgba(18, 12, 36, 0.03);
-    border-top: 0.3rem solid var(--primary-purple); /* Detalhe premium no topo */
+    border-top: 0.3rem solid var(--primary-purple); 
 }
 
-/* Organização vertical de cada campo e seu rótulo */
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -76,7 +74,7 @@
     margin-bottom: 0.5rem;
 }
 
-/* Estilo unificado para inputs, select e caixas de texto */
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -91,30 +89,30 @@
     width: 100%;
 }
 
-/* Micro-interação de foco para acessibilidade visual e digitação */
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-purple);
     background-color: var(--white);
-    box-shadow: 0 0 0 0.2rem rgba(140, 98, 243, 0.15); /* Efeito de brilho roxo sutil */
+    box-shadow: 0 0 0 0.2rem rgba(140, 98, 243, 0.15); 
 }
 
-/* Trava para que a caixa de mensagem seja redimensionada apenas na vertical */
+
 .form-group textarea {
     resize: vertical;
 }
 
 /* --------------------------------------------------------------------------
-   BOTÃO DE ENVIO (SUBMIT BUTTON)
+   BOTÃO DE ENVIO 
    -------------------------------------------------------------------------- */
 .form-actions {
     margin-top: 2rem;
 }
 
 .btn-submit {
-    width: 100%; /* Botão ocupa toda a largura interna do formulário */
+    width: 100%; 
     background-color: var(--primary-purple);
     color: var(--white);
     border: none;
@@ -138,44 +136,92 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES UTILIZANDO PIXELS PARA OS BREAKPOINTS
+   MEDIA QUERIES
    ========================================================================== */
 
 /* Ajustes finos para tablets (Até 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     .contact-hero {
-        padding-top: 3rem;
+        padding: 3.5rem 5% 1.5rem 5%;
+    }
+    
+    .contact-container {
+        padding-bottom: 4rem;
+    }
+
+    .contact-subtitle {
+        max-width: 85%; 
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .contact-form,
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .contact-hero {
+        padding: 3rem 6% 1rem 6%; 
+    }
+
+    .contact-container {
+        padding: 1rem 6% 3.5rem 6%;
+    }
+
+    .contact-subtitle {
+        max-width: 100%;
+        font-size: 1.05rem;
     }
 
     .contact-form {
+        max-width: 100%; 
         padding: 2rem 1.5rem;
     }
 }
 
-/* Ajustes finos para celulares (Até 480px) */
+
 @media (max-width: 480px) {
+    .contact-hero {
+        padding: 2.5rem 4% 1rem 4%;
+    }
+
+    .contact-container {
+        padding: 1rem 4% 2.5rem 4%;
+    }
+
+    .section-title h2 {
+        font-size: 1.75rem; 
+    }
+
     .contact-subtitle {
-        font-size: 1rem;
-        text-align: left; /* Muda para a esquerda no celular para melhor leitura */
+        font-size: 0.95rem;
+        text-align: left; 
+        opacity: 0.9;   
     }
 
     .contact-form {
-        padding: 1.5rem 1.2rem;
+        padding: 1.5rem 1.1rem;
+        border-radius: 0.4rem; 
     }
 
     .form-group label {
         font-size: 0.9rem;
     }
 
+   
     .form-group input,
     .form-group select,
     .form-group textarea {
-        padding: 0.7rem 0.9rem;
+        padding: 0.7rem 0.85rem;
         font-size: 0.95rem;
     }
 
     .btn-submit {
         font-size: 1rem;
-        padding: 0.9rem;
+        padding: 0.85rem;
     }
 }

@@ -2,7 +2,6 @@
    ESTILOS DO CABEÇALHO E MENU DE NAVEGAÇÃO GLOBAL
    ========================================================================== */
 
-/* Cabeçalho principal estruturado com Flexbox */
 .header {
     width: 100%;
     background-color: var(--white);
@@ -22,7 +21,6 @@
     color: var(--primary-purple);
 }
 
-/* Lista de Links para Desktop */
 .nav-list {
     display: flex;
     align-items: center;
@@ -43,13 +41,11 @@
     background-color: var(--light-bg);
 }
 
-/* Estado ativo no Desktop (Apenas muda a cor do texto de forma sutil) */
 .nav-list li a.active {
     color: var(--primary-purple);
     background-color: transparent;
 }
 
-/* Botão do Menu Hambúrguer (Escondido por padrão no computador) */
 .menu-toggle {
     display: none;
     background: none;
@@ -69,20 +65,28 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES - RESPONSIVIDADE COMPLETA E ORGANIZAÇÃO PREMIUM
+   MEDIA QUERIES
    ========================================================================== */
 
-/* Disparador do Menu Mobile e Tablet (Abaixo de 768px) */
+@media (max-width: 1300px) {
+    .header {
+        padding: 1rem 4%; 
+    }
+
+    .nav-list {
+        gap: 1rem; 
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex; /* Ativa as 3 barrinhas roxas na tela */
+        display: flex; 
     }
 
     .header {
-        padding: 1rem 6%;
+        padding: 1rem 1.5rem;
     }
 
-    /* Caixa suspensa do Menu (Preenche a largura inteira abaixo do topo) */
     .navbar {
         display: none; 
         position: absolute;
@@ -90,55 +94,75 @@
         left: 0;
         width: 100%;
         background-color: var(--white);
-        padding: 0; /* Remove espaçamentos para as linhas encostarem nas bordas */
+        padding: 0;
         box-shadow: 0 0.8rem 1.5rem rgba(18, 12, 36, 0.08);
         border-top: 0.1rem solid rgba(18, 12, 36, 0.04);
+        box-sizing: border-box; 
     }
 
-    /* Classe injetada pelo JavaScript para abrir o menu */
     .navbar.active {
         display: block;
     }
 
-    /* Lista empilhada verticalmente ocupando 100% do espaço */
     .nav-list {
         flex-direction: column;
-        gap: 0; /* Remove os espaços vazios entre os botões */
+        gap: 0; 
         width: 100%;
         align-items: stretch;
+        box-sizing: border-box;
     }
 
     .nav-list li {
         width: 100%;
-        border-bottom: 0.1rem solid rgba(18, 12, 36, 0.03); /* Linha divisória sutil entre os itens */
+        border-bottom: 0.1rem solid rgba(18, 12, 36, 0.03); 
+        box-sizing: border-box;
     }
 
-    /* Links transformados em linhas inteiras clicáveis */
     .nav-list a {
         display: block;
         width: 100%;
-        padding: 1.2rem 2.5rem; /* Respiro perfeito para clique com o polegar */
+        padding: 1.2rem 1.5rem; 
         font-size: 1.1rem;
         color: var(--text-main);
-        text-align: left; /* Alinhamento sofisticado à esquerda */
-        border-radius: 0; /* Remove cantos arredondados individuais esquisitos */
+        text-align: left;
+        border-radius: 0; 
         background-color: transparent;
+        box-sizing: border-box;
     }
 
-    /* Efeito de passar o dedo/mouse na linha */
     .nav-list a:hover {
         background-color: var(--light-bg);
         color: var(--primary-purple);
     }
 
-    /* ----------------------------------------------------------------------
-       ESTADO ATIVO NO MOBILE (VISUAL DE APLICATIVO PREMIUM)
-       ---------------------------------------------------------------------- */
     .nav-list li a.active {
         color: var(--primary-purple);
         font-weight: 700;
-        background-color: rgba(140, 98, 243, 0.04); /* Fundo lilás bem suave na linha toda */
-        border-left: 0.3rem solid var(--primary-purple); /* Faixa roxa marcando a página atual na esquerda */
-        padding-left: 2.2rem; /* Ajusta o respiro por causa da faixinha lateral */
+        background-color: rgba(140, 98, 243, 0.04);
+        border-left: 0.3rem solid var(--primary-purple); 
+        padding-left: 1.2rem; 
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.85rem 1.25rem; 
+    }
+
+    .logo h1 {
+        font-size: 1.35rem; 
+    }
+
+    .menu-toggle {
+        padding: 0.4rem; 
+    }
+
+    .nav-list a {
+        padding: 1.1rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .nav-list li a.active {
+        padding-left: 0.95rem; 
     }
 }

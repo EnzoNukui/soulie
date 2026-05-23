@@ -1,6 +1,6 @@
 /**
  * Inicializa os comportamentos dinâmicos da página de Solução.
- * Controla o sistema de ofensivas garantindo seleção única via Event Delegation.
+ * Controla o sistema de ofensivas em formato de linha do tempo cumulativa via Event Delegation.
  */
 export const initSolucao = () => {
     const containerDias = document.querySelector(".ui-days-row");
@@ -27,22 +27,26 @@ export const initSolucao = () => {
 
         const listaDias = Array.from(containerDias.children);
         const indice = listaDias.indexOf(diaClicado);
-        
-        listaDias.forEach((dia) => {
-            dia.classList.remove("done", "active");
-        });
 
-        // Marca exclusivamente o dia que acabou de ser clicado
-        diaClicado.classList.add("done");
+        if (indice !== -1) {
+            listaDias.forEach((dia, i) => {
+                if (i <= indice) {
+                    dia.classList.add("done");
+                    dia.classList.remove("active");
+                } else {
+                    dia.classList.remove("done", "active");
+                }
+            });
 
-        // Atualiza a mensagem com efeito suave de transição
-        if (indice !== -1 && frasesSoulie[indice]) {
-            containerMensagem.style.opacity = "0";
-            
-            setTimeout(() => {
-                containerMensagem.textContent = frasesSoulie[indice];
-                containerMensagem.style.opacity = "1";
-            }, 150);
+            // Atualiza a mensagem com efeito suave de transição
+            if (frasesSoulie[indice]) {
+                containerMensagem.style.opacity = "0";
+                
+                setTimeout(() => {
+                    containerMensagem.textContent = frasesSoulie[indice];
+                    containerMensagem.style.opacity = "1";
+                }, 150);
+            }
         }
     });
 };

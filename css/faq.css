@@ -38,24 +38,22 @@
    ESTRUTURA DO ACCORDION (PERGUNTAS E RESPOSTAS)
    -------------------------------------------------------------------------- */
 .faq-container {
-    max-width: 50rem; /* Limita a largura para uma leitura confortável (800px) */
+    max-width: 50rem; 
     margin: 0 auto 5rem auto;
     padding: 0 1.25rem;
     width: 100%;
 }
 
-/* Bloco de cada pergunta (Card) */
 .faq-item {
     background-color: var(--white);
     border-radius: 0.5rem;
     margin-bottom: 1.25rem;
     box-shadow: 0 0.25rem 1.25rem rgba(18, 12, 36, 0.03);
-    border-left: 0.25rem solid var(--primary-purple); /* Detalhe lateral roxo */
+    border-left: 0.25rem solid var(--primary-purple);
     transition: var(--transition-smooth);
     overflow: hidden;
 }
 
-/* Botão da Pergunta */
 .faq-question {
     width: 100%;
     background: none;
@@ -63,7 +61,7 @@
     cursor: pointer;
     padding: 1.5rem;
     display: flex;
-    justify-content: space-between; /* Afasta o texto do sinal de + */
+    justify-content: space-between; 
     align-items: center;
     gap: 1rem;
     text-align: left;
@@ -78,7 +76,7 @@
     color: var(--primary-purple);
 }
 
-/* Ícone de Expandir (+ / -) */
+
 .faq-icon {
     font-size: 1.375rem;
     color: var(--primary-purple);
@@ -86,7 +84,7 @@
     transition: var(--transition-smooth);
 }
 
-/* Bloco da Resposta (Escondido por padrão) */
+
 .faq-answer {
     display: none; 
     padding: 0 1.5rem 1.5rem 1.5rem;
@@ -96,19 +94,18 @@
     font-size: 1rem;
     color: var(--text-main);
     line-height: 1.7;
-    text-align: justify; /* Alinhamento justificado para organização visual */
+    text-align: justify;
 }
 
 /* --------------------------------------------------------------------------
    ESTADOS ATIVOS (INJETADOS VIA JAVASCRIPT)
    -------------------------------------------------------------------------- */
 
-/* Quando o item estiver aberto, exibe a resposta */
 .faq-item.active .faq-answer {
     display: block;
 }
 
-/* Efeito visual de destaque no card aberto */
+
 .faq-item.active {
     box-shadow: 0 0.5rem 1.5rem rgba(140, 98, 243, 0.1);
     background-color: var(--white);
@@ -119,10 +116,20 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES UTILIZANDO PIXELS PARA OS BREAKPOINTS
+   MEDIA QUERIES 
    ========================================================================== */
 
-/* Ajustes para Tablet (Até 768px) */
+@media (max-width: 1300px) {
+    .faq-title {
+        margin-top: 3.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .faq-container {
+        max-width: 45rem; 
+    }
+}
+
 @media (max-width: 768px) {
     .faq-title {
         margin-top: 3rem;
@@ -131,6 +138,10 @@
 
     .faq-title h2 {
         font-size: 1.75rem;
+    }
+
+    .faq-container {
+        padding: 0 1.5rem; 
     }
 
     .faq-question {
@@ -143,8 +154,11 @@
     }
 }
 
-/* Ajustes para Mobile (Até 480px) */
 @media (max-width: 480px) {
+    .faq-title {
+        padding: 0 1rem;
+    }
+
     .faq-title h2 {
         font-size: 1.5rem;
     }
@@ -155,11 +169,16 @@
 
     .faq-question {
         font-size: 1rem;
+        padding: 1.1rem 1rem;
+        gap: 0.75rem; 
     }
 
-    /* Evita espaçamentos esquisitos entre as palavras no celular */
     .faq-answer p {
-        text-align: left;
+        text-align: left; 
         font-size: 0.9375rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1rem 1.1rem 1rem;
     }
 }

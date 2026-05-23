@@ -108,6 +108,15 @@ Conheça os desenvolvedores responsáveis pela idealização e execução do eco
 
 [![GitHub](https://img.icons8.com/ios-glyphs/30/ffffff/github.png)](https://github.com/EnzoNukui/soulie) [https://github.com/EnzoNukui/soulie](https://github.com/EnzoNukui/soulie)
 
+## 🌐 Link do Projeto  (Live Site)
+ 
+O front-end do projeto **Soulie** já se encontra publicado, totalmente aberto e disponível para acesso público. Podes conferir a interface, o design e as interações navegando diretamente pelo link abaixo:
+ 
+🔗 **[Acessar ao site da Soulie](https://soulie-omega.vercel.app/index.html)**
+ 
+---
+*Nota: O deploy foi realizado através da plataforma Vercel para garantir alta performance e disponibilidade externa.*
+
 ## 📁 Estrutura de Pastas do Projeto
 A arquitetura do repositório segue rigorosamente a organização de arquivos do ambiente de desenvolvimento:
 

@@ -1,12 +1,12 @@
 /* ==========================================================================
-   ESTILOS DA PÁGINA INICIAL (HOME - INDEX)
+   ESTILOS DA PÁGINA INICIAL 
    ========================================================================== */
 
-/* Padronização dos títulos de seção da Home */
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
     padding: 0 1.2rem;
+    box-sizing: border-box;
 }
 
 .section-title h2 {
@@ -17,7 +17,6 @@
     padding-bottom: 0.6rem;
 }
 
-/* Linha decorativa roxa centralizada abaixo dos títulos */
 .section-title h2::after {
     content: '';
     position: absolute;
@@ -31,7 +30,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. SEÇÃO HERO (DOBRA PRINCIPAL TOTALMENTE CENTRALIZADA)
+   1. SEÇÃO HERO 
    -------------------------------------------------------------------------- */
 .hero {
     width: 100%;
@@ -41,6 +40,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .hero-content {
@@ -49,6 +49,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-content h2 {
@@ -78,6 +80,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.3rem 1rem rgba(140, 98, 243, 0.2);
     transition: var(--transition-smooth);
+    box-sizing: border-box;
 }
 
 .btn-hero:hover {
@@ -93,11 +96,14 @@
     padding: 5rem 5%;
     background-color: var(--white);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .context-container {
     max-width: 900px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .context-container p {
@@ -114,6 +120,7 @@
     padding: 5rem 5%;
     background-color: var(--light-bg);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .cards-container {
@@ -123,6 +130,7 @@
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .card {
@@ -132,6 +140,7 @@
     box-shadow: 0 0.2rem 1.2rem rgba(18, 12, 36, 0.03);
     border-top: 0.25rem solid var(--primary-purple);
     transition: var(--transition-smooth);
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -160,6 +169,7 @@
     padding: 5rem 5%;
     background-color: var(--white);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .features-grid {
@@ -169,6 +179,7 @@
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .feature-item {
@@ -177,6 +188,7 @@
     border-radius: 0.5rem;
     border-left: 0.2rem solid var(--primary-purple);
     transition: var(--transition-smooth);
+    box-sizing: border-box;
 }
 
 .feature-item:hover {
@@ -199,16 +211,16 @@
 }
 
 /* --------------------------------------------------------------------------
-   5. BANNER DE CHAMADA PARA AÇÃO (GRADIENTE MODERNO E PREMIUM)
+   5. BANNER DE CHAMADA PARA AÇÃO 
    -------------------------------------------------------------------------- */
 .cta-banner {
     padding: 6rem 5%;
-    /* Mistura elegante entre uma base escura profunda e o roxo da identidade */
     background: linear-gradient(135deg, #1b1035 0%, var(--primary-purple) 100%);
     color: var(--white);
     text-align: center;
     width: 100%;
     box-shadow: inset 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
 }
 
 .cta-banner h2 {
@@ -230,7 +242,7 @@
 
 .btn-secondary {
     display: inline-block;
-    background-color: var(--white); /* Botão branco se destaca perfeitamente no fundo roxo escuro */
+    background-color: var(--white);
     color: var(--primary-purple);
     border: none;
     padding: 1rem 2.5rem;
@@ -239,6 +251,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 0.4rem 1.2rem rgba(18, 12, 36, 0.2);
     transition: var(--transition-smooth);
+    box-sizing: border-box;
 }
 
 .btn-secondary:hover {
@@ -249,11 +262,25 @@
 }
 
 /* ==========================================================================
-   MEDIA QUERIES UTILIZANDO PIXELS PARA OS BREAKPOINTS
+   MEDIA QUERIES
    ========================================================================== */
 
-/* Ajustes para Tablet (Até 768px) */
+@media (max-width: 1300px) {
+    .hero {
+        padding: 5rem 5%;
+    }
 
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .project-context, 
+    .about-preview, 
+    .features-overview, 
+    .cta-banner {
+        padding: 4.5rem 5%;
+    }
+}
 
 @media (max-width: 768px) {
     .hero {
@@ -268,14 +295,21 @@
     .about-preview, 
     .features-overview, 
     .cta-banner {
-        padding: 4.5rem 1.5rem;
+        padding: 4rem 1.5rem;
     }
 
     .cards-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         max-width: 540px; 
-        margin: 0 auto;   /* Centraliza o bloco na página */
+        margin: 0 auto; 
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        max-width: 540px;
+        margin: 0 auto;
     }
 
     .cta-banner h2 {
@@ -283,8 +317,11 @@
     }
 }
 
-/* Ajustes para Mobile (Até 480px) */
 @media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 1.65rem;
+    }
+
     .hero-content h2 {
         font-size: 1.8rem;
     }
@@ -294,17 +331,28 @@
     .card p, 
     .feature-item p {
         text-align: left;
+        font-size: 1rem;
+    }
+
+    .cta-banner p {
+        text-align: center; 
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
     .btn-hero, 
     .btn-secondary {
         width: 100%;
         text-align: center;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
     }
 
-    .cards-container, 
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
+    .card {
+        padding: 2rem 1.25rem;
+    }
+
+    .feature-item {
+        padding: 1.5rem 1.25rem;
     }
 }
