@@ -1,0 +1,505 @@
+/* ==========================================================================
+   SOLUÇÃO
+========================================================================== */
+
+.solution-page-container {
+    width: 100%;
+    max-width: 85rem;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+/* ==========================================================================
+   HERO
+========================================================================== */
+
+.sol-section {
+    margin-bottom: 8rem;
+}
+
+.sol-hero-blueprint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.sol-hero-text {
+    flex: 1;
+}
+
+.sol-mini-tag {
+    display: inline-block;
+    background-color: rgba(139, 92, 246, 0.12);
+    color: var(--primary-purple);
+    padding: 0.7rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.sol-hero-text h2 {
+    font-size: 3.6rem;
+    line-height: 1.15;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    max-width: 42rem;
+}
+
+.sol-hero-text p {
+    color: var(--text-muted);
+    line-height: 1.9;
+    font-size: 1rem;
+    max-width: 40rem;
+}
+
+.sol-hero-badges {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.sol-badge-item {
+    background-color: var(--white);
+    border: 0.1rem solid rgba(139, 92, 246, 0.1);
+    padding: 0.9rem 1.2rem;
+    border-radius: 1rem;
+    color: var(--text-main);
+    font-weight: 600;
+    box-shadow: var(--card-shadow);
+}
+
+.sol-badge-item:hover {
+    background-color: var(--primary-purple); /* Transforma no fundo roxo vibrante */
+    border-color: var(--primary-purple);
+    color: #ffffff; /* Texto branco puro e destacado */
+    box-shadow: 0 0.6rem 1.5rem rgba(139, 92, 246, 0.28); 
+}
+.sol-hero-visual {
+    flex-shrink: 0;
+}
+
+.sol-avatar-fluid {
+    width: 22rem;
+}
+
+/* ==========================================================================
+   BLOCOS
+========================================================================== */
+
+.sol-block-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.sol-reverse {
+    flex-direction: row-reverse;
+}
+
+.sol-block-avatar {
+    flex-shrink: 0;
+}
+
+.sol-avatar-frame {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.sol-avatar-expression {
+    width: 14rem;
+}
+
+.sol-block-info {
+    flex: 1;
+}
+
+.sol-block-title {
+    margin-bottom: 1.5rem;
+}
+
+.sol-block-title span {
+    display: inline-block;
+    color: var(--primary-purple);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+.sol-block-title h3 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: var(--text-main);
+}
+
+.sol-block-info p {
+    color: var(--text-muted);
+    line-height: 1.9;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   MINI COMPONENTES UI
+========================================================================== */
+
+.sol-preview-ui {
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    width: fit-content;
+    min-width: 18rem;
+}
+
+/* streak */
+
+.ui-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.ui-days-row {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.ui-day {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgba(139, 92, 246, 0.08);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.ui-day.done {
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.ui-day.active {
+    border: 0.15rem solid var(--primary-purple);
+    color: var(--primary-purple);
+}
+
+/* notificação */
+
+.ui-notification {
+    max-width: 26rem;
+}
+
+.ui-notif-header {
+    color: var(--primary-purple);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.ui-notification p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* carteira */
+
+.ui-wallet-preview {
+    max-width: 24rem;
+}
+
+.ui-wallet-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ui-wallet-top span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.ui-wallet-top strong {
+    color: var(--primary-purple);
+    font-size: 1.4rem;
+}
+
+.ui-wallet-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* métricas */
+
+.ui-metrics-box {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ui-metric-item {
+    background-color: rgba(139, 92, 246, 0.05);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    min-width: 10rem;
+}
+
+.ui-metric-item strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.ui-metric-item span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.ui-metric-item.highlight {
+    background-color: rgba(139, 92, 246, 0.12);
+}
+.ui-streak-message {
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--primary-purple);
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(139, 92, 246, 0.05);
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.6rem;
+    line-height: 1.4;
+    border-left: 3px solid var(--primary-purple);
+    transition: all 0.3s ease; 
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE
+========================================================================== */
+
+/* ==========================================================================
+   RESPONSIVIDADE (MODELO DESKTOP-FIRST - ALINHADO EM 768px)
+========================================================================== */
+
+/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
+@media (max-width: 1300px) {
+    .solution-page-container {
+        max-width: 100%;
+        padding: 4rem 6%;
+    }
+
+    .sol-hero-text h2 {
+        font-size: 3rem;
+    }
+
+    .sol-block-title h3 {
+        font-size: 2rem;
+    }
+
+    .sol-avatar-fluid {
+        width: 18rem;
+    }
+
+    .sol-avatar-expression {
+        width: 12rem;
+    }
+}
+
+/* 2. QUEBRA DE LAYOUT PARA UMA COLUNA (Ajustado estritamente para Até 768px) */
+/* ==========================================================================
+   RESPONSIVIDADE (MODELO DESKTOP-FIRST - ALINHADO EM 768px)
+========================================================================== */
+
+/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
+/* ==========================================================================
+   RESPONSIVIDADE (MODELO DESKTOP-FIRST - AJUSTE FINO DE ORDEM)
+========================================================================== */
+
+/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
+@media (max-width: 1300px) {
+    .solution-page-container {
+        max-width: 100%;
+        padding: 4rem 6%;
+    }
+
+    .sol-hero-text h2 {
+        font-size: 3rem;
+    }
+
+    .sol-block-title h3 {
+        font-size: 2rem;
+    }
+
+    .sol-avatar-fluid {
+        width: 18rem;
+    }
+
+    .sol-avatar-expression {
+        width: 12rem;
+    }
+}
+
+/* 2. QUEBRA DE LAYOUT PARA UMA COLUNA (Até 768px) */
+/* ==========================================================================
+   RESPONSIVIDADE (MODELO DESKTOP-FIRST - AJUSTE FINO DE ORDEM)
+========================================================================== */
+
+/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
+@media (max-width: 1300px) {
+    .solution-page-container {
+        max-width: 100%;
+        padding: 4rem 6%;
+    }
+
+    .sol-hero-text h2 {
+        font-size: 3rem;
+    }
+
+    .sol-block-title h3 {
+        font-size: 2rem;
+    }
+
+    .sol-avatar-fluid {
+        width: 18rem;
+    }
+
+    .sol-avatar-expression {
+        width: 12rem;
+    }
+}
+
+/* 2. QUEBRA DE LAYOUT PARA UMA COLUNA (Até 768px) */
+/* ==========================================================================
+   RESPONSIVIDADE (APENAS CORREÇÕES DAS SUAS MEDIDAS - SEM QUEBRAS)
+========================================================================== */
+
+@media (max-width: 1300px) {
+
+    .sol-hero-text h2 {
+        font-size: 3rem;
+    }
+
+    .sol-block-title h3 {
+        font-size: 2rem;
+    }
+
+    .sol-avatar-fluid {
+        width: 18rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .sol-hero-blueprint,
+    .sol-block-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sol-reverse {
+        flex-direction: column; /* Desfaz a inversão para alinhar com os outros */
+    }
+
+    /* ==========================================================================
+       CONTROLE DE ORDEM DAS IMAGENS (Para não dar o efeito sanduíche)
+       ========================================================================== */
+    /* Na Hero: Primeira imagem fica no TOPO */
+    .sol-hero-visual { order: 1; }
+    .sol-hero-text { order: 2; }
+
+    /* Nos Blocos: O Título/Texto fica no TOPO, a expressão vai para BAIXO */
+    .sol-block-info { 
+        order: 1; 
+        width: 100%; /* Garante que o bloco ocupe a largura útil interna */
+    }
+    .sol-block-avatar { order: 2; }
+
+    /* ==========================================================================
+       CORREÇÃO DO CORTE: Força as larguras máximas a respeitarem a tela do celular
+       ========================================================================== */
+    .sol-hero-text h2,
+    .sol-block-title h3 {
+        max-width: 100%; /* Destrava os 42rem do desktop que faziam a tela quebrar */
+    }
+
+    .sol-hero-text p,
+    .sol-block-info p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%; /* Impede o texto de vazar para as laterais */
+    }
+
+    .sol-hero-badges {
+        justify-content: center;
+    }
+
+    .sol-preview-ui {
+        margin: 1.5rem auto 0 auto;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .solution-page-container {
+        padding: 3rem 1.5rem;
+    }
+
+    .sol-section {
+        margin-bottom: 6rem;
+    }
+
+    /* Alinhamento para a esquerda no celular (Padrão da sua página Sobre) */
+    .sol-hero-blueprint,
+    .sol-block-layout {
+        text-align: left;
+    }
+
+    /* Centraliza os blocos de imagem no topo do celular para o visual ficar bonito */
+    .sol-hero-visual,
+    .sol-block-avatar {
+        text-align: center;
+        width: 100%;
+    }
+
+    .sol-hero-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .sol-block-title h3 {
+        font-size: 1.7rem;
+    }
+
+    .sol-avatar-fluid {
+        width: 14rem;
+    }
+
+    .sol-avatar-expression {
+        width: 10rem;
+    }
+
+    .sol-preview-ui {
+        min-width: 100%;
+    }
+
+    .ui-days-row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}

@@ -5,12 +5,12 @@
     box-sizing: border-box;
 }
 
-/* Configuração base de acessibilidade para escala de REM */
+
 html {
-    font-size: 100%; /* Define que 1rem = 16px por padrão, respeitando o navegador */
+    font-size: 100%; 
 }
 
-/* Variáveis de cores oficiais da identidade visual da Soulie */
+
 :root {
     --primary-purple: #8c62f3;
     --primary-lilac: #b399ff;
@@ -24,23 +24,22 @@ html {
     --transition-smooth: all 0.3s ease;
 }
 
-/* Configurações gerais do corpo da página utilizando unidades relativas */
+
 body {
     font-family: var(--font-stack);
     background-color: var(--light-bg);
     color: var(--text-main);
-    font-size: 1rem; /* Equivalente a 16px */
+    font-size: 1rem; 
     line-height: 1.6;
 }
 
-/* Limpeza e transição suave para links */
+
 a {
     text-decoration: none;
     color: inherit;
     transition: var(--transition-smooth);
 }
 
-/* Remoção dos marcadores de listas */
 ul {
     list-style: none;
 }

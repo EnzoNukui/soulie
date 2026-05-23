@@ -274,7 +274,7 @@
     .cards-container {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        max-width: 540px; /* ✨ Limita o tamanho para o card ficar perfeito na tela */
+        max-width: 540px; 
         margin: 0 auto;   /* Centraliza o bloco na página */
     }
 
