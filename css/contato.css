@@ -139,7 +139,6 @@
    MEDIA QUERIES
    ========================================================================== */
 
-/* Ajustes finos para tablets (Até 768px) */
 @media (max-width: 1300px) {
     .contact-hero {
         padding: 3.5rem 5% 1.5rem 5%;

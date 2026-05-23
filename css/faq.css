@@ -14,7 +14,6 @@
     padding-bottom: 0.625rem;
 }
 
-/* Linha decorativa idêntica ao padrão visual da Home */
 .faq-title h2::after {
     content: '';
     position: absolute;
