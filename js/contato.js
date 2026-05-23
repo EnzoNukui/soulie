@@ -6,6 +6,7 @@ export const initContato = () => {
 
     // Escuta o evento de envio (submit) do formulário
     form.addEventListener('submit', (event) => {
+        e.preventDefault();
         const inputNome = form.querySelector('input[type="text"]');
         const inputEmail = form.querySelector('input[type="email"]');
         const textareaMensagem = form.querySelector('textarea');
@@ -31,5 +32,6 @@ export const initContato = () => {
 
         // Alerta de sucesso caso passe por todas as validações do 'if'
         alert(`Sucesso! Obrigado pelo feedback, ${nome}.`);
+        formulario.reset();
     });
 };
