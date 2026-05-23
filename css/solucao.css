@@ -170,6 +170,7 @@
 .ui-days-row {
     display: flex;
     gap: 0.8rem;
+    cursor: pointer;
 }
 
 .ui-day {
@@ -187,11 +188,6 @@
 .ui-day.done {
     background-color: var(--primary-purple);
     color: var(--white);
-}
-
-.ui-day.active {
-    border: 0.15rem solid var(--primary-purple);
-    color: var(--primary-purple);
 }
 
 /* notificação */
