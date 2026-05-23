@@ -17,7 +17,7 @@ Através de uma abordagem comportamental baseada em pilares estratégicos, como 
  
 O front-end do projeto **Soulie** já se encontra publicado, totalmente aberto e disponível para acesso público. Podes conferir a interface, o design e as interações navegando diretamente pelo link abaixo:
  
-🔗 **[Acessar ao site da Soulie](https://soulie-omega.vercel.app/index.html)**
+🔗 **<a href="https://soulie-omega.vercel.app/index.html" target="_blank">Acessar o site da Soulie</a>**
 
 ---
 
