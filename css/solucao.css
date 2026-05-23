@@ -340,7 +340,7 @@
     .sol-hero-text h2,
     .sol-block-title h3 {
         max-width: 100%; 
-        margin-bottom: 0.5rem; /* Evita que o título empurre muito o conteúdo */
+        margin-bottom: 0.5rem;
     }
 
     .sol-hero-text p,
@@ -348,7 +348,7 @@
         margin-left: auto;
         margin-right: auto;
         max-width: 100%;
-        margin-bottom: 0; /* Remove margens inferiores que criam vácuo */
+        margin-bottom: 0; 
     }
 
     .sol-hero-badges {
@@ -364,7 +364,6 @@
 @media (max-width: 480px) {
 
     .solution-page-container {
-        /* Controla o espaçamento do topo para não cobrir o menu fixo e remove excessos */
         padding: 4rem 1.5rem 1.5rem 1.5rem;
         display: flex;
         flex-direction: column;
@@ -379,7 +378,7 @@
     .sol-hero-blueprint,
     .sol-block-layout {
         text-align: left;
-        /* Garante que os blocos fiquem empilhados verticalmente sem vácuo */
+
         display: flex;
         flex-direction: column;
         gap: 1rem; 
