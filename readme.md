@@ -7,6 +7,20 @@ Através de uma abordagem comportamental baseada em pilares estratégicos, como 
 
 ---
 
+## 🔗 Repositório
+
+[![GitHub](https://img.icons8.com/ios-glyphs/30/ffffff/github.png)](https://github.com/EnzoNukui/soulie) [https://github.com/EnzoNukui/soulie](https://github.com/EnzoNukui/soulie)
+
+---
+
+## 🌐 Link do Projeto  (Live Site)
+ 
+O front-end do projeto **Soulie** já se encontra publicado, totalmente aberto e disponível para acesso público. Podes conferir a interface, o design e as interações navegando diretamente pelo link abaixo:
+ 
+🔗 **[Acessar ao site da Soulie](https://soulie-omega.vercel.app/index.html)**
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 O projeto foi desenvolvido utilizando tecnologias web nativas, prezando pela performance, sem dependências pesadas e com foco em boas práticas de componentização e semântica:
 
@@ -103,16 +117,6 @@ Conheça os desenvolvedores responsáveis pela idealização e execução do eco
     </tr>
   </tbody>
 </table>
-
-## 🔗 Repositório
-
-[![GitHub](https://img.icons8.com/ios-glyphs/30/ffffff/github.png)](https://github.com/EnzoNukui/soulie) [https://github.com/EnzoNukui/soulie](https://github.com/EnzoNukui/soulie)
-
-## 🌐 Link do Projeto  (Live Site)
- 
-O front-end do projeto **Soulie** já se encontra publicado, totalmente aberto e disponível para acesso público. Podes conferir a interface, o design e as interações navegando diretamente pelo link abaixo:
- 
-🔗 **[Acessar ao site da Soulie](https://soulie-omega.vercel.app/index.html)**
  
 ---
 *Nota: O deploy foi realizado através da plataforma Vercel para garantir alta performance e disponibilidade externa.*
