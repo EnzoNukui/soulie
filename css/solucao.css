@@ -14,14 +14,14 @@
 ========================================================================== */
 
 .sol-section {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
 .sol-hero-blueprint {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 8rem;
 }
 
 .sol-hero-text {
@@ -105,12 +105,7 @@
     flex-shrink: 0;
 }
 
-.sol-avatar-frame {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 2rem;
-    box-shadow: var(--card-shadow);
-}
+
 
 .sol-avatar-expression {
     width: 14rem;
@@ -284,14 +279,9 @@
 
 
 /* ==========================================================================
-   RESPONSIVIDADE
+   MEDIA QUERIES
 ========================================================================== */
 
-/* ==========================================================================
-   RESPONSIVIDADE (MODELO DESKTOP-FIRST - ALINHADO EM 768px)
-========================================================================== */
-
-/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
 @media (max-width: 1300px) {
     .solution-page-container {
         max-width: 100%;
@@ -315,166 +305,97 @@
     }
 }
 
-/* 2. QUEBRA DE LAYOUT PARA UMA COLUNA (Ajustado estritamente para Até 768px) */
-/* ==========================================================================
-   RESPONSIVIDADE (MODELO DESKTOP-FIRST - ALINHADO EM 768px)
-========================================================================== */
-
-/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
-/* ==========================================================================
-   RESPONSIVIDADE (MODELO DESKTOP-FIRST - AJUSTE FINO DE ORDEM)
-========================================================================== */
-
-/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
-@media (max-width: 1300px) {
-    .solution-page-container {
-        max-width: 100%;
-        padding: 4rem 6%;
-    }
-
-    .sol-hero-text h2 {
-        font-size: 3rem;
-    }
-
-    .sol-block-title h3 {
-        font-size: 2rem;
-    }
-
-    .sol-avatar-fluid {
-        width: 18rem;
-    }
-
-    .sol-avatar-expression {
-        width: 12rem;
-    }
-}
-
-/* 2. QUEBRA DE LAYOUT PARA UMA COLUNA (Até 768px) */
-/* ==========================================================================
-   RESPONSIVIDADE (MODELO DESKTOP-FIRST - AJUSTE FINO DE ORDEM)
-========================================================================== */
-
-/* 1. Ajustes para Telas de Notebooks (Até 1300px) */
-@media (max-width: 1300px) {
-    .solution-page-container {
-        max-width: 100%;
-        padding: 4rem 6%;
-    }
-
-    .sol-hero-text h2 {
-        font-size: 3rem;
-    }
-
-    .sol-block-title h3 {
-        font-size: 2rem;
-    }
-
-    .sol-avatar-fluid {
-        width: 18rem;
-    }
-
-    .sol-avatar-expression {
-        width: 12rem;
-    }
-}
-
-/* 2. QUEBRA DE LAYOUT PARA UMA COLUNA (Até 768px) */
-/* ==========================================================================
-   RESPONSIVIDADE (APENAS CORREÇÕES DAS SUAS MEDIDAS - SEM QUEBRAS)
-========================================================================== */
-
-@media (max-width: 1300px) {
-
-    .sol-hero-text h2 {
-        font-size: 3rem;
-    }
-
-    .sol-block-title h3 {
-        font-size: 2rem;
-    }
-
-    .sol-avatar-fluid {
-        width: 18rem;
-    }
-
-}
 
 @media (max-width: 768px) {
 
-    .sol-hero-blueprint,
+    /* 🎯 CORREÇÃO: Força o flex, aproxima os elementos com gap e centraliza tudo */
+    .sol-hero-blueprint {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem; /* Controla a distância exata entre o texto e a imagem */
+        text-align: center;
+    }
+
     .sol-block-layout {
         flex-direction: column;
         text-align: center;
     }
 
     .sol-reverse {
-        flex-direction: column; /* Desfaz a inversão para alinhar com os outros */
+        display: flex;
+        flex-direction: column; 
+        gap: 1.5rem;
     }
 
-    /* ==========================================================================
-       CONTROLE DE ORDEM DAS IMAGENS (Para não dar o efeito sanduíche)
-       ========================================================================== */
-    /* Na Hero: Primeira imagem fica no TOPO */
-    .sol-hero-visual { order: 1; }
-    .sol-hero-text { order: 2; }
+    /* Garante que o texto fique em cima (order: 1) e a imagem logo abaixo (order: 2) */
+    .sol-hero-visual { order: 2; }
+    .sol-hero-text { order: 1; }
 
-    /* Nos Blocos: O Título/Texto fica no TOPO, a expressão vai para BAIXO */
     .sol-block-info { 
         order: 1; 
-        width: 100%; /* Garante que o bloco ocupe a largura útil interna */
+        width: 100%; 
     }
     .sol-block-avatar { order: 2; }
 
-    /* ==========================================================================
-       CORREÇÃO DO CORTE: Força as larguras máximas a respeitarem a tela do celular
-       ========================================================================== */
     .sol-hero-text h2,
     .sol-block-title h3 {
-        max-width: 100%; /* Destrava os 42rem do desktop que faziam a tela quebrar */
+        max-width: 100%; 
+        margin-bottom: 0.5rem; /* Evita que o título empurre muito o conteúdo */
     }
 
     .sol-hero-text p,
     .sol-block-info p {
         margin-left: auto;
         margin-right: auto;
-        max-width: 100%; /* Impede o texto de vazar para as laterais */
+        max-width: 100%;
+        margin-bottom: 0; /* Remove margens inferiores que criam vácuo */
     }
 
     .sol-hero-badges {
         justify-content: center;
+        margin-top: 0.5rem;
     }
 
     .sol-preview-ui {
-        margin: 1.5rem auto 0 auto;
+        margin: 0.5rem auto 0 auto;
     }
 
 }
-
 @media (max-width: 480px) {
 
     .solution-page-container {
-        padding: 3rem 1.5rem;
+        /* Controla o espaçamento do topo para não cobrir o menu fixo e remove excessos */
+        padding: 4rem 1.5rem 1.5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .sol-section {
-        margin-bottom: 6rem;
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 1rem;
     }
 
-    /* Alinhamento para a esquerda no celular (Padrão da sua página Sobre) */
     .sol-hero-blueprint,
     .sol-block-layout {
         text-align: left;
+        /* Garante que os blocos fiquem empilhados verticalmente sem vácuo */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; 
     }
 
-    /* Centraliza os blocos de imagem no topo do celular para o visual ficar bonito */
     .sol-hero-visual,
     .sol-block-avatar {
         text-align: center;
         width: 100%;
+        margin-top: 0;
+        padding-top: 0;
     }
 
     .sol-hero-text h2 {
         font-size: 2.2rem;
+        margin-top: 0;
     }
 
     .sol-block-title h3 {
@@ -483,10 +404,13 @@
 
     .sol-avatar-fluid {
         width: 14rem;
+        height: auto;
+        display: inline-block;
     }
 
     .sol-avatar-expression {
         width: 10rem;
+        height: auto;
     }
 
     .sol-preview-ui {

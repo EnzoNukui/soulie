@@ -305,10 +305,9 @@
     .about-solution, 
     .avatar-timeline-section, 
     .avatar-expressions-section {
-        padding: 3rem 4%; /* Reduz sutilmente o respiro para o conteúdo não espremer */
+        padding: 3rem 4%; 
     }
 
-    /* PROTEÇÃO DA TIMELINE: Encolhe os círculos para não colidirem antes do mobile */
     .avatar-box {
         width: 110px;
         height: 110px;
@@ -320,7 +319,7 @@
     }
     
     .timeline-roadmap::before {
-        top: 55px; /* Rebaixa a linha guia para acompanhar o centro dos círculos menores */
+        top: 55px; 
     }
     
     .timeline-step h3 {
