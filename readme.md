@@ -136,7 +136,8 @@ A arquitetura do repositório segue rigorosamente a organização de arquivos do
 │   ├── integrante.css        # Layout da página de apresentação da equipe
 │   ├── main.css              # Variáveis globais e configurações de reset
 │   ├── menu.css              # Estilização do cabeçalho e menu de navegação
-│   └── sobre.css             # Estilos da página institucional e linha do tempo
+│   ├── sobre.css             # Estilos da página institucional e linha do tempo
+│   └── solucao.css           # Estilo da pagina solução
 ├── 📂 imagens/
 │   ├── 📂 avatar/            # Estados, expressões e evolução da Soulie
 │   ├── 📂 favicon/           # Ícones de inicialização do navegador
@@ -146,12 +147,14 @@ A arquitetura do repositório segue rigorosamente a organização de arquivos do
 │   ├── contato.js            # Validações do formulário de contato
 │   ├── faq.js                # Comportamento dos accordions de dúvidas
 │   ├── main.js               # Script principal e inicializador
-│   └── menu.js               # Lógica de abertura/fechamento do menu responsivo
+│   ├── menu.js               # Lógica de abertura/fechamento do menu responsivo
+│   └── solucao.js            # Logica para o calendário presente na página solução
 ├── 📂 paginas/
 │   ├── contato.html          # Tela de comunicação e suporte
 │   ├── faq.html              # Central de perguntas frequentes
 │   ├── integrante.html       # Apresentação dos desenvolvedores
-│   └── sobre.html            # Detalhemento e trajetória da solução
+│   ├── sobre.html            # Detalhemento e trajetória da solução
+│   └── solucao.html          # Apresentação da nossa solução
 ├── index.html                # Página principal (Home) do ecossistema
 └── readme.md                 # Guia técnico e informativo do projeto
 ```
