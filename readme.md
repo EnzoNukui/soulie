@@ -133,7 +133,7 @@ A arquitetura do repositório segue rigorosamente a organização de arquivos do
 │   ├── faq.css               # Design da seção de dúvidas frequentes
 │   ├── footer.css            # Estilos do rodapé global
 │   ├── index.css             # Estilos específicos da página Home
-│   ├── integrante.css        # Layout da página de apresentação da equipe
+│   ├── integrantes.css        # Layout da página de apresentação da equipe
 │   ├── main.css              # Variáveis globais e configurações de reset
 │   ├── menu.css              # Estilização do cabeçalho e menu de navegação
 │   ├── sobre.css             # Estilos da página institucional e linha do tempo
