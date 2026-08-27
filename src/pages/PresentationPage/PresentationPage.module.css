@@ -9,13 +9,13 @@
 .navCta { justify-self: end; min-height: 38px; padding: 0 14px; display: flex; align-items: center; gap: 7px; border: 1px solid #ded9f2; border-radius: 13px; color: var(--color-primary-dark); background: rgba(255,255,255,.74); font-size: .68rem; font-weight: 850; text-decoration: none; }
 
 .hero { position: relative; width: min(1240px, calc(100% - 48px)); min-height: 700px; margin: 0 auto; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(430px,.92fr); align-items: center; gap: clamp(30px,6vw,86px); padding: 46px 0 82px; }
-.hero::before { content: ''; position: absolute; width: 640px; height: 640px; right: -170px; top: -40px; border-radius: 50%; background: radial-gradient(circle, rgba(140,103,239,.19), rgba(94,198,235,.09) 45%, transparent 68%); filter: blur(3px); }
+.hero::before { content: ''; position: absolute; width: 640px; height: 640px; right: -170px; top: -40px; border-radius: 50%; background: radial-gradient(circle, rgba(140,103,239,.19), rgba(94,198,235,.09) 45%, transparent 68%); filter: blur(3px); pointer-events: none; }
 .copy { position: relative; z-index: 3; max-width: 730px; }
 .eyebrow, .sectionIntro > span, .sectionIntroLight > span, .personalityCopy > span, .impactTitle > span, .finalCta > div > span { color: var(--color-primary); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
 .copy h1 { margin: 18px 0 22px; font-size: clamp(4rem,6.8vw,7rem); line-height: .91; letter-spacing: -.07em; }
 .copy h1 em { color: var(--color-primary); font-style: normal; }
 .lead { max-width: 650px; margin: 0; color: var(--color-text-soft); font-size: clamp(1rem,1.45vw,1.2rem); line-height: 1.67; }
-.actions { display: flex; align-items: center; gap: 23px; margin-top: 31px; }
+.actions { position: relative; z-index: 5; display: flex; align-items: center; gap: 23px; margin-top: 31px; }
 .actions :global(.button) { min-height: 54px; padding-inline: 25px; border-radius: 18px; }
 .secondaryAction { color: var(--color-text); font-size: .8rem; font-weight: 800; text-underline-offset: 5px; }
 .valueFlow { margin-top: 31px; display: flex; align-items: center; gap: 10px; color: #777182; font-size: .64rem; font-weight: 760; }
@@ -137,7 +137,7 @@
   .copy h1 { align-self: flex-start; margin: 3px 0 0; font-size: clamp(3.5rem,17vw,5.4rem); }
   .lead { order: 2; font-size: .94rem; line-height: 1.58; }
   .actions { order: 3; width: 100%; display: grid; gap: 13px; margin-top: 7px; text-align: center; }
-  .secondaryAction { font-size: .75rem; }
+  .secondaryAction { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; font-size: .75rem; }
   .valueFlow { order: 5; width: 100%; justify-content: center; gap: 7px; font-size: .54rem; }
   .characterStage { order: 4; width: 100%; min-height: 405px; }
   .characterStage img { width: min(270px,75%); height: 355px; }
