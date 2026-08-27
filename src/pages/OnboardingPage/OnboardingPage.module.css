@@ -1,0 +1,15 @@
+.content { padding: 17px 18px 24px; }
+.heading { margin: 19px 2px 13px; }
+.heading > span { color: var(--color-primary); font-size: .59rem; font-weight: 850; letter-spacing: .09em; }
+.heading h2 { margin: 5px 0 4px; font-size: 1.35rem; letter-spacing: -.03em; }
+.heading p { margin: 0; color: var(--color-text-soft); font-size: .69rem; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.option, .optionActive { position: relative; min-height: 91px; padding: 13px; display: grid; justify-items: start; align-content: space-between; border: 1px solid var(--color-border); border-radius: 17px; color: var(--color-text); background: white; cursor: pointer; text-align: left; transition: border .2s ease, transform .2s ease, background .2s ease; }
+.option:hover { border-color: #beb5ec; transform: translateY(-2px); }
+.optionActive { border: 2px solid var(--color-primary); background: var(--color-primary-soft); }
+.option > span, .optionActive > span { font-size: 1.2rem; }
+.option strong, .optionActive strong { max-width: 95%; font-size: .72rem; }
+.option i, .optionActive i { position: absolute; top: 9px; right: 9px; width: 20px; height: 20px; display: grid; place-items: center; border-radius: 7px; color: var(--color-text-soft); background: #f1f0f5; font-size: .7rem; font-style: normal; font-weight: 900; }
+.optionActive i { color: white; background: var(--color-primary); }
+.actions { display: grid; gap: 4px; margin-top: 17px; }
+

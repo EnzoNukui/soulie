@@ -1,0 +1,4 @@
+.page { width: min(520px, calc(100% - 40px)); min-height: 100dvh; margin: 0 auto; display: grid; place-items: center; align-content: center; gap: 12px; text-align: center; }
+.page h1 { margin: 15px 0 0; font-size: 2rem; }
+.page > p { margin: 0 0 8px; color: var(--color-text-soft); }
+
