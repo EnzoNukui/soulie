@@ -45,7 +45,7 @@
 .notificationAction:focus-visible { outline:2px solid var(--color-primary); outline-offset:2px; }
 .notificationDot { position:absolute; top:2px; right:1px; width:7px; height:7px; border:2px solid white; border-radius:50%; background:#ef6f8f; }
 .appContent { flex: 1; min-height: 0; overflow-y: auto; scrollbar-width: thin; }
-.floatingAction { position: absolute; z-index: 7; right: -4px; bottom: 282px; pointer-events: none; }
+.assistant { position: absolute; z-index: 7; right: -4px; bottom: 282px; pointer-events: none; }
 .bottomNav { min-height: 65px; padding: 7px 14px 8px; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; background: white; border-top: 1px solid #ebeaf0; }
 .bottomNav > span,.bottomNav > a { min-width: 0; display: grid; place-items: center; gap: 1px; color: #8d8998; font-size: 1.15rem; text-decoration:none; }
 .bottomNav > a:focus-visible { border-radius:10px; outline:2px solid var(--color-primary); outline-offset:2px; }
@@ -63,6 +63,6 @@
   .phone { width: 100%; height: auto; min-height: calc(100dvh - 230px); border: 0; border-radius: 0; box-shadow: none; }
   .phoneTop { display: none; }
   .appContent { overflow: visible; }
-  .floatingAction { position: fixed; right: -3px; bottom: 282px; }
+  .assistant { position: fixed; right: -3px; bottom: 282px; }
   .bottomNav { position: sticky; bottom: 0; z-index: 5; }
 }

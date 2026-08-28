@@ -10,7 +10,6 @@
 .notice strong { display:block; margin-bottom:5px; color:#4d40ba; }
 .notice p { margin:0; color:#59536a; font-size:.78rem; line-height:1.4; }
 .notice img { position:absolute; right:8px; bottom:-10px; width:82px; height:95px; object-fit:contain; mix-blend-mode:multiply; }
-.soulieFab { display:block; width:64px; height:78px; object-fit:contain; filter:drop-shadow(0 9px 10px #3f2f943d); animation:soulieHover 3.1s ease-in-out infinite; }
 .stories { display:flex; gap:12px; overflow:auto; padding:2px 0 6px; }
 .story { min-width:64px; text-align:center; font-size:.63rem; color:#635e70; }
 .story span { width:52px; height:52px; margin:0 auto 5px; display:grid; place-items:center; border:3px solid #7060ea; border-radius:50%; background:white; font-size:1.05rem; }
@@ -87,13 +86,12 @@
 .emptyCommunities { padding:24px 18px; border:1px dashed #cfc8e3; border-radius:20px; text-align:center; background:#fbfaff; }.emptyCommunities > span { width:48px; height:48px; margin:0 auto 8px; display:grid; place-items:center; border-radius:50%; color:#6555d5; background:#ede9ff; font-size:1.35rem; }.emptyCommunities h3 { margin:0 0 5px; font-size:.9rem; }.emptyCommunities p { margin:0; color:#746d7e; font-size:.7rem; line-height:1.45; }
 .discoverCommunity { display:grid; grid-template-columns:40px 1fr 26px; align-items:center; gap:10px; padding:14px; border:1px solid #d9d1fb; border-radius:18px; color:#3f365e; background:linear-gradient(135deg,#f5f2ff,#edfaff); text-decoration:none; }.discoverCommunity > span { width:40px; height:40px; display:grid; place-items:center; border-radius:13px; color:white; background:linear-gradient(135deg,#6657e8,#58bfe3); font-size:1.25rem; }.discoverCommunity strong,.discoverCommunity small { display:block; }.discoverCommunity strong { font-size:.78rem; }.discoverCommunity small { margin-top:3px; color:#716a7c; font-size:.62rem; line-height:1.35; }.discoverCommunity b { color:#5a4bc9; }
 @keyframes float { 50% { transform:translateY(-7px) rotate(2deg); } }
-@keyframes soulieHover { 50% { transform:translateY(-6px) rotate(-1.5deg); } }
 @keyframes celebrationPop { from { opacity:0; transform:scale(.55) translateY(24px); } to { opacity:1; transform:scale(1) translateY(0); } }
 @keyframes rewardPop { from { opacity:0; transform:scale(.65); } to { opacity:1; transform:scale(1); } }
 @keyframes celebrationGlow { 50% { transform:scale(1.1); opacity:.72; } }
 @keyframes confettiIn { from { opacity:0; transform:translateY(-18px) rotate(0); } to { opacity:1; } }
 @keyframes goalFill { from { transform:scaleX(0); } to { transform:scaleX(1); } }
-@media (prefers-reduced-motion: reduce) { .celebration img,.soulieFab,.completionCharacter img,.completionCharacter > span,.pointsBurst,.confetti i,.goalProgress span { animation:none; }.trailCard,.allTrailsButton,.collectiveProgress span,.communityChoice { transition:none; } }
+@media (prefers-reduced-motion: reduce) { .celebration img,.completionCharacter img,.completionCharacter > span,.pointsBurst,.confetti i,.goalProgress span { animation:none; }.trailCard,.allTrailsButton,.collectiveProgress span,.communityChoice { transition:none; } }
 @media (max-width:840px) { .screen { padding-bottom:24px; } }
 
 .notificationScreen { gap:16px; }

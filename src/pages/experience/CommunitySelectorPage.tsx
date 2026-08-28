@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
-import soulieAvatar from '../../assets/soulie/soulie.png'
 import { ExperienceShell } from '../../components/experience/ExperienceShell'
 import { communities } from '../../data/communities'
+import { SoulieAssistant } from '../../features/soulie/components/SoulieAssistant'
 import { useDemo } from '../../hooks/useDemo'
 import styles from './Journey.module.css'
 
@@ -9,7 +9,7 @@ export function CommunitySelectorPage() {
   const { state } = useDemo()
   const joinedCommunities = communities.filter((community) => state.joinedCommunityIds.includes(community.id))
 
-  return <ExperienceShell eyebrow="Escolha antes de entrar" title="Cada comunidade tem seu próprio movimento." description="A pessoa vê os espaços que escolheu, decide qual deseja visitar e pode ampliar sua rede quando quiser. A Soulie mantém o contexto de cada comunidade separado." step={5} aside={<p className={styles.muted}>A seleção evita levar o usuário automaticamente para uma comunidade quando ele participa de várias.</p>} floatingAction={<img className={styles.soulieFab} src={soulieAvatar} alt="Soulie disponível na seleção de comunidades" />} activeNav="communities">
+  return <ExperienceShell eyebrow="Escolha antes de entrar" title="Cada comunidade tem seu próprio movimento." description="A pessoa vê os espaços que escolheu, decide qual deseja visitar e pode ampliar sua rede quando quiser. A Soulie mantém o contexto de cada comunidade separado." step={5} aside={<p className={styles.muted}>A seleção evita levar o usuário automaticamente para uma comunidade quando ele participa de várias.</p>} assistant={<SoulieAssistant context={{ kind: 'community-selector' }} />} activeNav="communities">
     <div className={styles.screen}>
       <div className={styles.topline}><div><h2>Minhas comunidades</h2><span className={styles.muted}>{joinedCommunities.length} {joinedCommunities.length === 1 ? 'comunidade escolhida' : 'comunidades escolhidas'}</span></div></div>
 

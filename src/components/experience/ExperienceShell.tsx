@@ -10,7 +10,7 @@ type ExperienceShellProps = {
   totalSteps?: number
   children: ReactNode
   aside: ReactNode
-  floatingAction?: ReactNode
+  assistant?: ReactNode
   activeNav?: 'home' | 'communities'
   showNotificationAction?: boolean
 }
@@ -24,7 +24,7 @@ const stages = [
   { label: 'Missões', to: '/jornada/missoes' },
 ]
 
-export function ExperienceShell({ eyebrow, title, description, step, totalSteps = 6, children, aside, floatingAction, activeNav, showNotificationAction = false }: ExperienceShellProps) {
+export function ExperienceShell({ eyebrow, title, description, step, totalSteps = 6, children, aside, assistant, activeNav, showNotificationAction = false }: ExperienceShellProps) {
   return (
     <main className={styles.page}>
       <section className={styles.intro} aria-labelledby="page-title">
@@ -62,7 +62,7 @@ export function ExperienceShell({ eyebrow, title, description, step, totalSteps 
           </div>
         </div>
         <div className={styles.appContent}>{children}</div>
-        {floatingAction && <div className={styles.floatingAction}>{floatingAction}</div>}
+        {assistant && <div className={styles.assistant}>{assistant}</div>}
         <nav className={styles.bottomNav} aria-label="Navegação da demonstração Soul Up">
           <NavLink to="/jornada/feed" className={activeNav === 'home' ? styles.navActive : undefined} aria-label="Ir para o início">⌂<small>Início</small></NavLink>
           <NavLink to="/jornada/comunidade" className={activeNav === 'communities' ? styles.navActive : undefined} aria-label="Ir para comunidades">♧<small>Comunidades</small></NavLink>

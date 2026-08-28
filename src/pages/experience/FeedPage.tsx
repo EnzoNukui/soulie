@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
-import soulieAvatar from '../../assets/soulie/soulie.png'
 import { ExperienceShell } from '../../components/experience/ExperienceShell'
 import { missionTrails, getMission } from '../../data/missions'
+import { SoulieAssistant } from '../../features/soulie/components/SoulieAssistant'
 import { useDemo } from '../../hooks/useDemo'
 import styles from './Journey.module.css'
 
@@ -9,7 +9,7 @@ export function FeedPage() {
   const { state } = useDemo()
   const recommended = missionTrails[0]
   const lastMission = getMission(state.lastCompletedMissionId ?? undefined)
-  return <ExperienceShell eyebrow="Soulie no cotidiano" title="A missão nasce dentro do feed." description="Antes de abrir uma trilha, o usuário vê comunidade, atividade e contexto. A Soulie intervém no momento certo, sem tomar o aplicativo inteiro." step={4} aside={<p className={styles.muted}>Protótipo com dados simulados. O feed preserva apenas o contexto necessário para demonstrar a Soulie.</p>} floatingAction={<img className={styles.soulieFab} src={soulieAvatar} alt="Soulie disponível no canto do aplicativo" />} activeNav="home" showNotificationAction>
+  return <ExperienceShell eyebrow="Soulie no cotidiano" title="A missão nasce dentro do feed." description="Antes de abrir uma trilha, o usuário vê comunidade, atividade e contexto. A Soulie intervém no momento certo, sem tomar o aplicativo inteiro." step={4} aside={<p className={styles.muted}>Protótipo com dados simulados. O feed preserva apenas o contexto necessário para demonstrar a Soulie.</p>} assistant={<SoulieAssistant context={{ kind: 'feed' }} />} activeNav="home" showNotificationAction>
     <div className={styles.screen}>
       <section className={styles.wallet}><div className={styles.walletHead}><span>MINHA CARTEIRA</span><span className={styles.streak}>🔥 {state.streakDays} dias</span></div><div className={styles.balance}>{state.points} pts</div><div className={styles.walletFoot}><span>Saldo demonstrativo</span><span>Ver histórico →</span></div></section>
       <section className={styles.notice} aria-label="Notificação da Soulie"><strong>{lastMission ? 'Mandou bem! Seu feed mudou.' : 'Tenho um próximo passo para você.'}</strong><p>{lastMission ? `“${lastMission.title}” entrou para o seu progresso. Vamos manter a ofensiva?` : 'Encontrei uma trilha curta ligada à comunidade que você acabou de escolher.'}</p></section>
