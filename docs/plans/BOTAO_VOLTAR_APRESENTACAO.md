@@ -85,3 +85,51 @@ Nenhuma divergência foi necessária.
 - Test Agent: `PASS`;
 - Final Review: `READY TO MERGE`;
 - limitação conhecida: o projeto ainda não possui testes automatizados ou regressão visual.
+
+## Ajuste visual posterior — separação do título auxiliar
+
+### Objetivo
+
+Garantir que o botão “Voltar à apresentação” ocupe sua própria linha e mantenha distância clara do texto auxiliar (`eyebrow`) exibido logo abaixo.
+
+### Requisitos
+
+- preservar posição, texto, rota, acessibilidade e comportamento do botão;
+- impedir que o botão e o texto auxiliar apareçam lado a lado;
+- manter espaçamento coerente em desktop e mobile;
+- não alterar a composição do telefone ou demais conteúdos da experiência.
+
+### Arquivos envolvidos
+
+- `src/components/experience/ExperienceShell.module.css`;
+- `docs/plans/BOTAO_VOLTAR_APRESENTACAO.md`.
+
+### Etapas
+
+1. Corrigir o comportamento de layout do botão para que ele forme um bloco próprio.
+2. Conferir o espaçamento com o texto auxiliar nos breakpoints existentes.
+3. Executar typecheck, lint, build e revisões independentes.
+
+### Critérios de aceite
+
+- [x] botão e texto auxiliar não dividem a mesma linha;
+- [x] o botão preserva largura ajustada ao conteúdo e alvo mínimo de toque;
+- [x] o espaçamento continua adequado em desktop e mobile;
+- [x] typecheck, lint e build passam;
+- [x] Final Review retorna `READY TO MERGE`.
+
+### Riscos
+
+- alterar o tipo de caixa do botão sem preservar `width: fit-content` poderia fazê-lo ocupar toda a largura; a regra atual deve ser mantida.
+
+### Resultado e revisões
+
+- implementação: `.backToPresentation` alterado de `inline-flex` para `flex`, preservando `width: fit-content`;
+- Plan Review: aprovado;
+- Code Review: aprovado;
+- UX Review: aprovado;
+- Test Agent: `PASS`;
+- `npm run typecheck`: aprovado;
+- `npm run lint`: aprovado;
+- `npm run build`: aprovado;
+- Final Review: `READY TO MERGE`.
