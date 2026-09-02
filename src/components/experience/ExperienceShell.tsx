@@ -28,6 +28,10 @@ export function ExperienceShell({ eyebrow, title, description, step, totalSteps 
   return (
     <main className={styles.page}>
       <section className={styles.intro} aria-labelledby="page-title">
+        <Link className={styles.backToPresentation} to="/" aria-label="Voltar à apresentação da Soulie">
+          <span aria-hidden="true">←</span>
+          Voltar à apresentação
+        </Link>
         <span className={styles.eyebrow}>{eyebrow}</span>
         <h1 id="page-title">{title}</h1>
         <p>{description}</p>

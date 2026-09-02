@@ -10,6 +10,28 @@
 }
 
 .intro { max-width: 560px; }
+.backToPresentation {
+  min-height: 44px;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 28px;
+  padding: 0 16px;
+  border: 1px solid #dcd7ef;
+  border-radius: 999px;
+  color: #554a80;
+  background: rgba(255, 255, 255, .78);
+  box-shadow: 0 8px 22px rgba(58, 43, 108, .07);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .18s ease, border-color .18s ease, background .18s ease, transform .18s ease;
+}
+.backToPresentation span { font-size: 1rem; transition: transform .18s ease; }
+.backToPresentation:hover { color: var(--color-primary); border-color: #aea2e9; background: white; transform: translateY(-1px); }
+.backToPresentation:hover span { transform: translateX(-2px); }
+.backToPresentation:focus-visible { outline: 3px solid rgba(63, 113, 238, .55); outline-offset: 3px; }
 .intro h1 { margin: 18px 0 18px; font-size: clamp(2.6rem, 5vw, 5rem); line-height: .98; letter-spacing: -.055em; }
 .intro > p { max-width: 510px; color: var(--color-text-soft); font-size: 1.08rem; line-height: 1.72; }
 .eyebrow { color: var(--color-primary); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -56,6 +78,7 @@
 @media (max-width: 840px) {
   .page { width: 100%; min-height: 100dvh; display: block; padding: 0; }
   .intro { max-width: none; padding: 28px 22px 18px; background: var(--color-surface); }
+  .backToPresentation { margin-bottom: 18px; background: white; }
   .intro h1 { margin: 10px 0 10px; font-size: 2rem; }
   .intro > p { font-size: .94rem; line-height: 1.5; }
   .steps { margin-top: 18px; }
@@ -65,4 +88,9 @@
   .appContent { overflow: visible; }
   .assistant { position: fixed; right: -3px; bottom: 282px; }
   .bottomNav { position: sticky; bottom: 0; z-index: 5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backToPresentation, .backToPresentation span { transition: none; }
+  .backToPresentation:hover, .backToPresentation:hover span { transform: none; }
 }
