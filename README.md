@@ -1,5 +1,4 @@
-# Soulie | Front-end Design Engineering — Sprint 4
-
+# Soulie | Front-end Design Engineering
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&amp;logo=react&amp;logoColor=61DAFB" alt="React">
   <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&amp;logo=vite&amp;logoColor=white" alt="Vite">
