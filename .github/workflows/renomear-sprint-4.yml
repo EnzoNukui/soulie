@@ -1,0 +1,65 @@
+name: Renomear pasta Sprint 4
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: renomear-sprint-4
+  cancel-in-progress: false
+
+jobs:
+  renomear:
+    if: github.repository == 'EnzoNukui/soulie' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Renomear e verificar os caminhos
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh auth setup-git
+          git clone https://github.com/EnzoNukui/soulie.git repositorio
+          cd repositorio
+          git checkout main
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          baseline=$(git rev-parse HEAD)
+          app_before=$(git rev-parse HEAD:my-app)
+          test -d my-app
+          test ! -e sprint-4
+          git mv my-app sprint-4
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          path = Path('README.md')
+          text = path.read_text(encoding='utf-8')
+          assert 'my-app' in text
+          text = text.replace('my-app', 'sprint-4')
+          text = text.replace('EnzoNukui/soulie-sprint4', 'EnzoNukui/soulie')
+          text = text.replace('soulie-sprint4/', 'soulie/')
+          old = '└── sprint-4/'
+          assert old in text
+          text = text.replace(old, '├── mvp/\n├── sprint-1-2/\n├── sprint-3/\n└── sprint-4/', 1)
+          assert 'my-app' not in text
+          for image in re.findall(r'<img\b[^>]*src="(\./[^"]+)"', text):
+              assert Path(image).is_file(), f'Imagem ausente: {image}'
+          path.write_text(text, encoding='utf-8')
+          PY
+          if git grep -n 'my-app' -- sprint-4 ':!sprint-4/package.json' ':!sprint-4/package-lock.json'; then
+            echo 'Referencia adicional encontrada; revisar antes de publicar.'
+            exit 1
+          fi
+          git add README.md
+          git diff --cached --stat
+          git diff --cached -- README.md
+          git commit -m 'chore: renomeia my-app para sprint-4 e atualiza caminhos do README'
+          test "$(git rev-parse HEAD:sprint-4)" = "$app_before"
+          git diff --exit-code "$baseline" HEAD -- mvp sprint-1-2 sprint-3
+          test ! -d my-app
+          git push origin HEAD:main
+          printf 'Pasta sprint-4 renomeada com conteudo integralmente preservado.\nREADME atualizado e imagens verificadas.\nDemais entregas preservadas.\n' >> "$GITHUB_STEP_SUMMARY"
