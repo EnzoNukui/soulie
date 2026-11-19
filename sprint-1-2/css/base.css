@@ -1,0 +1,45 @@
+/* Reset estrutural obrigatório */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 100%; 
+}
+
+
+:root {
+    --primary-purple: #8c62f3;
+    --primary-lilac: #b399ff;
+    --accent-blue: #59c3f7;
+    --dark-bg: #120c24;
+    --light-bg: #f8f6ff;
+    --white: #ffffff;
+    --text-main: #2d293a;
+    
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-smooth: all 0.3s ease;
+}
+
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--light-bg);
+    color: var(--text-main);
+    font-size: 1rem; 
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+ul {
+    list-style: none;
+}
