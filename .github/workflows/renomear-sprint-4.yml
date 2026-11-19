@@ -49,16 +49,18 @@ jobs:
           for image in re.findall(r'<img\b[^>]*src="(\./[^"]+)"', text):
               assert Path(image).is_file(), f'Imagem ausente: {image}'
           path.write_text(text, encoding='utf-8')
+          example = Path('sprint-4/.env.example')
+          example.write_text(example.read_text(encoding='utf-8').replace('my-app', 'sprint-4'), encoding='utf-8')
           PY
           if git grep -n 'my-app' -- sprint-4 ':!sprint-4/package.json' ':!sprint-4/package-lock.json'; then
             echo 'Referencia adicional encontrada; revisar antes de publicar.'
             exit 1
           fi
-          git add README.md
+          git add README.md sprint-4/.env.example
           git diff --cached --stat
           git diff --cached -- README.md
           git commit -m 'chore: renomeia my-app para sprint-4 e atualiza caminhos do README'
-          test "$(git rev-parse HEAD:sprint-4)" = "$app_before"
+          git diff --exit-code "$baseline:my-app" HEAD:sprint-4 -- . ':!.env.example'
           git diff --exit-code "$baseline" HEAD -- mvp sprint-1-2 sprint-3
           test ! -d my-app
           git push origin HEAD:main
