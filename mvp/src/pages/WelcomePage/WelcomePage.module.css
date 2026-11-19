@@ -1,0 +1,17 @@
+.content { padding: 18px 18px 26px; }
+.walletBar { display: flex; align-items: center; gap: 11px; padding: 12px 13px; border-radius: 17px; background: white; box-shadow: 0 8px 24px rgba(46,39,76,.06); }
+.walletIcon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px; color: var(--color-primary); background: var(--color-primary-soft); font-size: 1.3rem; }
+.walletBar div { display: grid; gap: 1px; }
+.walletBar small { color: var(--color-text-soft); font-size: .65rem; }
+.walletBar strong { font-size: .85rem; }
+.pulse { margin-left: auto; padding: 5px 8px; border-radius: 999px; color: #237d62; background: #e1f8ef; font-size: .59rem; font-weight: 800; }
+.welcomeCard { margin-top: 15px; padding: 21px 18px 18px; overflow: hidden; border-radius: 26px; background: linear-gradient(150deg, #fff 0%, #f0edff 55%, #e5f8ff 100%); box-shadow: var(--shadow-card); }
+.kicker { color: var(--color-primary); font-size: .63rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+.welcomeCard h2 { margin: 7px 0 7px; font-size: 1.55rem; letter-spacing: -.035em; }
+.welcomeCard > p { margin: 0 0 17px; color: var(--color-text-soft); font-size: .8rem; line-height: 1.5; }
+.actions { display: grid; gap: 5px; margin-top: 18px; }
+.previewGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 15px; }
+.previewGrid div { min-height: 72px; display: grid; place-items: center; align-content: center; gap: 4px; border: 1px solid var(--color-border); border-radius: 17px; background: rgba(255,255,255,.78); }
+.previewGrid span { color: var(--color-primary); font-size: 1.2rem; }
+.previewGrid small { color: var(--color-text-soft); font-size: .62rem; font-weight: 700; }
+

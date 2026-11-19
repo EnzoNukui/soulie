@@ -1,0 +1,6 @@
+.notes { display: grid; gap: 12px; }
+.notes article { display: flex; gap: 13px; align-items: flex-start; padding: 13px 15px; border: 1px solid var(--color-border); border-radius: 18px; background: rgba(255,255,255,.7); }
+.notes article > span { width: 28px; height: 28px; flex: 0 0 28px; display: grid; place-items: center; border-radius: 9px; color: var(--color-primary); background: var(--color-primary-soft); font-size: .7rem; font-weight: 850; }
+.notes strong { display: block; font-size: .82rem; }
+.notes p { margin: 3px 0 0; color: var(--color-text-soft); font-size: .75rem; line-height: 1.45; }
+
