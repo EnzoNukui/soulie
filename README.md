@@ -23,7 +23,7 @@ Nesta Sprint 4, o site e o aplicativo formam uma **SPA em React, Vite e TypeScri
 
 | Recurso | Endereço |
 | --- | --- |
-| Repositório do front-end | [EnzoNukui/soulie-sprint4](https://github.com/EnzoNukui/soulie-sprint4) |
+| Repositório do front-end | [EnzoNukui/soulie](https://github.com/EnzoNukui/soulie) |
 | Aplicação publicada na Vercel | [soulie-sprint4.vercel.app](https://soulie-sprint4.vercel.app/) |
 | API Java publicada | [soulie-java.onrender.com/missoes](https://soulie-java.onrender.com/missoes) |
 | Vídeo de apresentação | [Assistir no YouTube](https://youtu.be/nqB3IUTKXAY?si=EOsZCH2BwNNibNlt) |
@@ -76,7 +76,7 @@ O fluxo de entrada consulta o e-mail cadastrado e o cadastro cria o usuário em 
 
 ## Integração com a API Java
 
-O cliente HTTP em `my-app/src/services/apiClient.ts` usa **fetch**, adiciona os cabeçalhos necessários e centraliza o tratamento de falhas. As operações ficam em arquivos de `src/services/`, enquanto os contratos de dados são tipados em `src/types/api.ts`.
+O cliente HTTP em `sprint-4/src/services/apiClient.ts` usa **fetch**, adiciona os cabeçalhos necessários e centraliza o tratamento de falhas. As operações ficam em arquivos de `src/services/`, enquanto os contratos de dados são tipados em `src/types/api.ts`.
 
 | Operação exigida | Exemplo implementado | Uso na interface |
 | --- | --- | --- |
@@ -111,9 +111,12 @@ As páginas são carregadas **sob demanda** com a opção `lazy` do React Router
 ## Estrutura de pastas
 
 ```text
-soulie-sprint4/
+soulie/
 ├── README.md
-└── my-app/
+├── mvp/
+├── sprint-1-2/
+├── sprint-3/
+└── sprint-4/
     ├── .env.example           # configuração pública para execução local
     ├── public/                 # arquivos estáticos
     ├── src/
@@ -140,14 +143,14 @@ soulie-sprint4/
 Instale **Node.js 22.12 ou superior**, com npm, e Git. A execução completa requer acesso à internet: o front-end local usa a API Java publicada e o EmailJS. Não é necessário iniciar o backend Java, instalar banco de dados ou executar um servidor de e-mail na máquina para avaliar esta entrega.
 
 ```bash
-git clone https://github.com/EnzoNukui/soulie-sprint4.git
-cd soulie-sprint4/my-app
+git clone https://github.com/EnzoNukui/soulie.git
+cd soulie/sprint-4
 npm ci
 ```
 
 #### 2. Configurar as integrações
 
-Dentro de `my-app`, copie o arquivo `.env.example` para `.env`. O exemplo já contém os valores públicos utilizados na configuração local do projeto.
+Dentro de `sprint-4`, copie o arquivo `.env.example` para `.env`. O exemplo já contém os valores públicos utilizados na configuração local do projeto.
 
 **Windows (PowerShell):**
 
@@ -161,7 +164,7 @@ Copy-Item .env.example .env
 cp .env.example .env
 ```
 
-O arquivo deve estar em **`my-app/.env`**, ao lado de `package.json`, com este conteúdo:
+O arquivo deve estar em **`sprint-4/.env`**, ao lado de `package.json`, com este conteúdo:
 
 ```dotenv
 VITE_API_URL=https://soulie-java.onrender.com
@@ -222,7 +225,7 @@ Consulte as referências de [variáveis dos modelos](https://www.emailjs.com/doc
 
 | Sintoma | O que conferir |
 | --- | --- |
-| Mensagem de URL da API não configurada | Verifique se `.env` está dentro de `my-app`, se `VITE_API_URL` foi preenchida e reinicie o Vite. |
+| Mensagem de URL da API não configurada | Verifique se `.env` está dentro de `sprint-4`, se `VITE_API_URL` foi preenchida e reinicie o Vite. |
 | API demora para responder | A instância publicada no Render pode levar um tempo para iniciar. Aguarde e tente novamente; o cliente cancela requisições após 60 segundos. |
 | Contato informa que o envio não está configurado | Confira as três variáveis `VITE_EMAILJS_...` e reinicie o Vite. |
 | EmailJS recusa o envio | O responsável pela conta deve verificar serviço conectado, modelo, Public Key, limite de envios e permissão da origem local no painel. |
@@ -231,7 +234,7 @@ Consulte as referências de [variáveis dos modelos](https://www.emailjs.com/doc
 
 #### Verificar a compilação
 
-Para conferir o projeto antes de publicar, execute dentro de `my-app`:
+Para conferir o projeto antes de publicar, execute dentro de `sprint-4`:
 
 ```bash
 npm run lint
@@ -243,7 +246,7 @@ O preview serve a versão compilada, normalmente em **http://localhost:4173**. S
 
 ### Publicação na Vercel
 
-O diretório da aplicação é `my-app`. Na configuração do projeto na Vercel, use esse diretório como raiz, `npm run build` para compilar e `dist` como saída. Cadastre as **mesmas quatro variáveis** da configuração local em **Settings → Environment Variables**, nos ambientes em que o projeto será utilizado. Uma mudança nessas variáveis exige uma nova implantação. O arquivo `vercel.json` encaminha as rotas da SPA para `index.html`, permitindo abrir diretamente URLs como `/app/missoes`.
+O diretório da aplicação é `sprint-4`. Na configuração do projeto na Vercel, use esse diretório como raiz, `npm run build` para compilar e `dist` como saída. Cadastre as **mesmas quatro variáveis** da configuração local em **Settings → Environment Variables**, nos ambientes em que o projeto será utilizado. Uma mudança nessas variáveis exige uma nova implantação. O arquivo `vercel.json` encaminha as rotas da SPA para `index.html`, permitindo abrir diretamente URLs como `/app/missoes`.
 
 ## Responsividade e acessibilidade
 
@@ -255,11 +258,11 @@ Formulários têm rótulos, mensagens de validação e destaque visual de campos
 
 | Integrante | Foto | RM | Turma | LinkedIn | GitHub |
 | --- | --- | --- | --- | --- | --- |
-| Arthur Carvalho Brito Martins | <img src="./my-app/src/assets/integrantes/foto_arthur.jpeg" alt="Arthur Carvalho Brito Martins" width="56"> | 572325 | 1TDSPH | [Perfil](https://www.linkedin.com/in/arthur-martinss/) | [arthurmartinss](https://github.com/arthurmartinss) |
-| Diego Soares Trujillo | <img src="./my-app/src/assets/integrantes/foto_diego.jpg" alt="Diego Soares Trujillo" width="56"> | 570147 | 1TDSPH | [Perfil](https://www.linkedin.com/in/diego-trujillo-3441b9380/) | [diegotrujillo011](https://github.com/diegotrujillo011) |
-| Enzo Nukui da Silva | <img src="./my-app/src/assets/integrantes/foto_enzo.jpeg" alt="Enzo Nukui da Silva" width="56"> | 569770 | 1TDSPH | [Perfil](https://www.linkedin.com/in/enzo-nukui/) | [EnzoNukui](https://github.com/EnzoNukui) |
-| Leticia Cardoso de Almeida | <img src="./my-app/src/assets/integrantes/foto_leticia_cardoso.jpeg" alt="Leticia Cardoso de Almeida" width="56"> | 569415 | 1TDSPH | [Perfil](https://www.linkedin.com/in/let%C3%ADcia-almeida-70b851294/) | [lehalmeidafc0](https://github.com/lehalmeidafc0) |
-| Leticia Dias Araujo Felix Moratori | <img src="./my-app/src/assets/integrantes/foto_leticia_dias.jpeg" alt="Leticia Dias Araujo Felix Moratori" width="56"> | 569138 | 1TDSPH | [Perfil](https://www.linkedin.com/in/leticia-felix-660253286) | [LeticiaFelix18](https://github.com/LeticiaFelix18) |
+| Arthur Carvalho Brito Martins | <img src="./sprint-4/src/assets/integrantes/foto_arthur.jpeg" alt="Arthur Carvalho Brito Martins" width="56"> | 572325 | 1TDSPH | [Perfil](https://www.linkedin.com/in/arthur-martinss/) | [arthurmartinss](https://github.com/arthurmartinss) |
+| Diego Soares Trujillo | <img src="./sprint-4/src/assets/integrantes/foto_diego.jpg" alt="Diego Soares Trujillo" width="56"> | 570147 | 1TDSPH | [Perfil](https://www.linkedin.com/in/diego-trujillo-3441b9380/) | [diegotrujillo011](https://github.com/diegotrujillo011) |
+| Enzo Nukui da Silva | <img src="./sprint-4/src/assets/integrantes/foto_enzo.jpeg" alt="Enzo Nukui da Silva" width="56"> | 569770 | 1TDSPH | [Perfil](https://www.linkedin.com/in/enzo-nukui/) | [EnzoNukui](https://github.com/EnzoNukui) |
+| Leticia Cardoso de Almeida | <img src="./sprint-4/src/assets/integrantes/foto_leticia_cardoso.jpeg" alt="Leticia Cardoso de Almeida" width="56"> | 569415 | 1TDSPH | [Perfil](https://www.linkedin.com/in/let%C3%ADcia-almeida-70b851294/) | [lehalmeidafc0](https://github.com/lehalmeidafc0) |
+| Leticia Dias Araujo Felix Moratori | <img src="./sprint-4/src/assets/integrantes/foto_leticia_dias.jpeg" alt="Leticia Dias Araujo Felix Moratori" width="56"> | 569138 | 1TDSPH | [Perfil](https://www.linkedin.com/in/leticia-felix-660253286) | [LeticiaFelix18](https://github.com/LeticiaFelix18) |
 
 Projeto acadêmico desenvolvido para o **Challenge FIAP 2026**, em parceria com a **SoulUp**.
 
@@ -269,15 +272,15 @@ A Soulie possui diferentes expressões para comunicar o estado da jornada. A apl
 
 | Expressão | Imagem | Aplicação |
 | --- | --- | --- |
-| Feliz | <img src="./my-app/src/assets/avatar/expressoes/avatar_feliz.png" alt="Soulie feliz" width="60"> | Conclusão de missões |
-| Radiante | <img src="./my-app/src/assets/avatar/expressoes/avatar_radiante.png" alt="Soulie radiante" width="60"> | Marcos de progresso e recorrência |
-| Sorridente | <img src="./my-app/src/assets/avatar/expressoes/avatar_sorridente.png" alt="Soulie sorridente" width="60"> | Evolução positiva na jornada |
-| Bravo | <img src="./my-app/src/assets/avatar/expressoes/avatar_bravo.png" alt="Soulie brava" width="60"> | Interrupção de sequência ou alerta |
-| Triste | <img src="./my-app/src/assets/avatar/expressoes/avatar_triste.png" alt="Soulie triste" width="60"> | Longos períodos de inatividade |
-| Entediado | <img src="./my-app/src/assets/avatar/expressoes/avatar_entediado.png" alt="Soulie entediada" width="60"> | Inatividade moderada |
-| Tímido | <img src="./my-app/src/assets/avatar/expressoes/avatar_timido.png" alt="Soulie tímida" width="60"> | Onboarding e primeiras interações |
-| Com dúvida | <img src="./my-app/src/assets/avatar/expressoes/avatar_duvida.png" alt="Soulie com dúvida" width="60"> | Ajuda e orientação |
-| Com pressa | <img src="./my-app/src/assets/avatar/expressoes/avatar_com_pressa.png" alt="Soulie com pressa" width="60"> | Lembretes e urgência |
+| Feliz | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_feliz.png" alt="Soulie feliz" width="60"> | Conclusão de missões |
+| Radiante | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_radiante.png" alt="Soulie radiante" width="60"> | Marcos de progresso e recorrência |
+| Sorridente | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_sorridente.png" alt="Soulie sorridente" width="60"> | Evolução positiva na jornada |
+| Bravo | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_bravo.png" alt="Soulie brava" width="60"> | Interrupção de sequência ou alerta |
+| Triste | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_triste.png" alt="Soulie triste" width="60"> | Longos períodos de inatividade |
+| Entediado | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_entediado.png" alt="Soulie entediada" width="60"> | Inatividade moderada |
+| Tímido | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_timido.png" alt="Soulie tímida" width="60"> | Onboarding e primeiras interações |
+| Com dúvida | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_duvida.png" alt="Soulie com dúvida" width="60"> | Ajuda e orientação |
+| Com pressa | <img src="./sprint-4/src/assets/avatar/expressoes/avatar_com_pressa.png" alt="Soulie com pressa" width="60"> | Lembretes e urgência |
 
 ### Telas do aplicativo
 
@@ -286,7 +289,7 @@ As telas abaixo mostram a jornada do usuário no aplicativo e as requisições f
 <table>
   <tr>
     <td width="55%">
-      <img src="./my-app/src/assets/produto/tela_soulie.png" alt="Tela de acesso do aplicativo Soulie" width="100%">
+      <img src="./sprint-4/src/assets/produto/tela_soulie.png" alt="Tela de acesso do aplicativo Soulie" width="100%">
     </td>
     <td>
       <h4>Acesso e cadastro</h4>
@@ -298,7 +301,7 @@ As telas abaixo mostram a jornada do usuário no aplicativo e as requisições f
   </tr>
   <tr>
     <td width="55%">
-      <img src="./my-app/src/assets/produto/inicio_soulie.png" alt="Tela de início do aplicativo Soulie" width="100%">
+      <img src="./sprint-4/src/assets/produto/inicio_soulie.png" alt="Tela de início do aplicativo Soulie" width="100%">
     </td>
     <td>
       <h4>Início</h4>
@@ -309,7 +312,7 @@ As telas abaixo mostram a jornada do usuário no aplicativo e as requisições f
   </tr>
   <tr>
     <td width="55%">
-      <img src="./my-app/src/assets/produto/missoes_soulie.png" alt="Tela de missões do aplicativo Soulie" width="100%">
+      <img src="./sprint-4/src/assets/produto/missoes_soulie.png" alt="Tela de missões do aplicativo Soulie" width="100%">
     </td>
     <td>
       <h4>Missões</h4>
@@ -322,7 +325,7 @@ As telas abaixo mostram a jornada do usuário no aplicativo e as requisições f
   </tr>
   <tr>
     <td width="55%">
-      <img src="./my-app/src/assets/produto/comunidades_soulie.png" alt="Tela de comunidades do aplicativo Soulie" width="100%">
+      <img src="./sprint-4/src/assets/produto/comunidades_soulie.png" alt="Tela de comunidades do aplicativo Soulie" width="100%">
     </td>
     <td>
       <h4>Comunidades</h4>
@@ -348,7 +351,7 @@ A página inicial apresenta a Soulie, os pilares da solução e as chamadas para
 
 | Antes | Depois |
 | :---: | :---: |
-| <img src="./my-app/src/assets/produto/home-antigo.png" alt="Versão anterior da Home" width="100%"> | <img src="./my-app/src/assets/produto/home-novo.png" alt="Versão atual da Home" width="100%"> |
+| <img src="./sprint-4/src/assets/produto/home-antigo.png" alt="Versão anterior da Home" width="100%"> | <img src="./sprint-4/src/assets/produto/home-novo.png" alt="Versão atual da Home" width="100%"> |
 
 #### Sobre
 
@@ -356,7 +359,7 @@ A página Sobre apresenta a origem da Soulie, suas expressões e a trajetória d
 
 | Antes | Depois |
 | :---: | :---: |
-| <img src="./my-app/src/assets/produto/sobre-antigo.png" alt="Versão anterior da página Sobre" width="100%"> | <img src="./my-app/src/assets/produto/sobre-novo.png" alt="Versão atual da página Sobre" width="100%"> |
+| <img src="./sprint-4/src/assets/produto/sobre-antigo.png" alt="Versão anterior da página Sobre" width="100%"> | <img src="./sprint-4/src/assets/produto/sobre-novo.png" alt="Versão atual da página Sobre" width="100%"> |
 
 #### Solução
 
@@ -364,7 +367,7 @@ A página Solução explica como missões, pontos, comunidades e recompensas tra
 
 | Antes | Depois |
 | :---: | :---: |
-| <img src="./my-app/src/assets/produto/solucao-antigo.png" alt="Versão anterior da página Solução" width="100%"> | <img src="./my-app/src/assets/produto/solucao-novo.png" alt="Versão atual da página Solução" width="100%"> |
+| <img src="./sprint-4/src/assets/produto/solucao-antigo.png" alt="Versão anterior da página Solução" width="100%"> | <img src="./sprint-4/src/assets/produto/solucao-novo.png" alt="Versão atual da página Solução" width="100%"> |
 
 #### Integrantes
 
@@ -372,7 +375,7 @@ A página Integrantes apresenta a equipe e permite acessar perfis individuais pe
 
 | Antes | Depois |
 | :---: | :---: |
-| <img src="./my-app/src/assets/produto/integrantes-antigo.png" alt="Versão anterior da página Integrantes" width="100%"> | <img src="./my-app/src/assets/produto/integrantes-novo.png" alt="Versão atual da página Integrantes" width="100%"> |
+| <img src="./sprint-4/src/assets/produto/integrantes-antigo.png" alt="Versão anterior da página Integrantes" width="100%"> | <img src="./sprint-4/src/assets/produto/integrantes-novo.png" alt="Versão atual da página Integrantes" width="100%"> |
 
 #### FAQ
 
@@ -380,7 +383,7 @@ A página FAQ reúne as principais dúvidas em perguntas expansíveis.
 
 | Antes | Depois |
 | :---: | :---: |
-| <img src="./my-app/src/assets/produto/faq-antigo.png" alt="Versão anterior da página FAQ" width="100%"> | <img src="./my-app/src/assets/produto/faq-novo.png" alt="Versão atual da página FAQ" width="100%"> |
+| <img src="./sprint-4/src/assets/produto/faq-antigo.png" alt="Versão anterior da página FAQ" width="100%"> | <img src="./sprint-4/src/assets/produto/faq-novo.png" alt="Versão atual da página FAQ" width="100%"> |
 
 #### Contato
 
@@ -388,11 +391,11 @@ A página Contato oferece um formulário para dúvidas, problemas técnicos, sug
 
 | Antes | Depois |
 | :---: | :---: |
-| <img src="./my-app/src/assets/produto/contato-antigo.png" alt="Versão anterior da página Contato" width="100%"> | <img src="./my-app/src/assets/produto/contato-novo.png" alt="Versão atual da página Contato" width="100%"> |
+| <img src="./sprint-4/src/assets/produto/contato-antigo.png" alt="Versão anterior da página Contato" width="100%"> | <img src="./sprint-4/src/assets/produto/contato-novo.png" alt="Versão atual da página Contato" width="100%"> |
 
 ## Contato
 
-Envie dúvidas, sugestões e relatos pelo [formulário de contato da Soulie](https://soulie-sprint4.vercel.app/contato). Para questões sobre o código, use as [Issues do repositório](https://github.com/EnzoNukui/soulie-sprint4/issues).
+Envie dúvidas, sugestões e relatos pelo [formulário de contato da Soulie](https://soulie-sprint4.vercel.app/contato). Para questões sobre o código, use as [Issues do repositório](https://github.com/EnzoNukui/soulie/issues).
 
 
 ## Licença
