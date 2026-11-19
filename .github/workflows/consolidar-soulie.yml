@@ -1,0 +1,66 @@
+name: Consolidar entregas Soulie
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: consolidar-soulie
+  cancel-in-progress: false
+
+jobs:
+  importar:
+    if: github.repository == 'EnzoNukui/soulie' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Importar e verificar as entregas
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh auth setup-git
+          git clone https://github.com/EnzoNukui/soulie.git consolidacao
+          cd consolidacao
+          git checkout main
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          baseline=$(git rev-parse HEAD)
+          readme_before=$(git rev-parse HEAD:README.md)
+          app_before=$(git rev-parse HEAD:my-app)
+
+          for folder in sprint-1-2 sprint-3 mvp; do
+            if git cat-file -e "HEAD:$folder" 2>/dev/null; then
+              echo "A pasta $folder ja existe; interrompendo para preservar seu conteudo."
+              exit 1
+            fi
+          done
+
+          import_project() {
+            local prefix="$1"
+            local source="$2"
+            local expected="$3"
+            git fetch --no-tags "$source" main
+            local source_commit
+            source_commit=$(git rev-parse FETCH_HEAD)
+            test "$source_commit" = "$expected"
+            local source_tree
+            source_tree=$(git rev-parse "$source_commit^{tree}")
+            git subtree add --prefix="$prefix" "$source_commit" -m "chore: centraliza $prefix preservando o historico"
+            test "$(git rev-parse "HEAD:$prefix")" = "$source_tree"
+            git merge-base --is-ancestor "$source_commit" HEAD
+            printf '%s: %s (arquivos e historico verificados)\n' "$prefix" "$source_commit" >> "$GITHUB_STEP_SUMMARY"
+          }
+
+          import_project sprint-1-2 https://github.com/EnzoNukui/soulie-sprint1-2.git ea14348f0ad55435b18e0cbc74b7ac29d4341f28
+          import_project sprint-3 https://github.com/EnzoNukui/soulie-sprint3.git fcf08879f8b4bd7d1fa57f578c9c89b6921f1ec9
+          import_project mvp https://github.com/EnzoNukui/mvp_soulup.git 5eb0b769130d54e487266e4ed91a17d55c4a94b7
+
+          test "$(git rev-parse HEAD:README.md)" = "$readme_before"
+          test "$(git rev-parse HEAD:my-app)" = "$app_before"
+          git diff --exit-code "$baseline" HEAD -- README.md my-app
+          git push origin HEAD:main
+          printf '\nREADME principal e my-app preservados integralmente.\n' >> "$GITHUB_STEP_SUMMARY"
